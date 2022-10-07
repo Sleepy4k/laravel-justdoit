@@ -1,0 +1,3 @@
+<fieldset {{ $type }}>
+    {{ $slot }}
+</fieldset>

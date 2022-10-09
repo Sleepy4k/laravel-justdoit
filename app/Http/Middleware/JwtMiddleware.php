@@ -5,8 +5,8 @@ namespace App\Http\Middleware;
 use Closure;
 use Exception;
 use App\Traits\ApiRespons;
-use PHPOpenSourceSaver\JWTAuth\Facades\JWTAuth;
-use PHPOpenSourceSaver\JWTAuth\Http\Middleware\BaseMiddleware;
+use Tymon\JWTAuth\Facades\JWTAuth;
+use Tymon\JWTAuth\Http\Middleware\BaseMiddleware;
 
 class JwtMiddleware extends BaseMiddleware
 {
@@ -24,22 +24,22 @@ class JwtMiddleware extends BaseMiddleware
         try {
             $user = JWTAuth::parseToken()->authenticate();
         } catch (Exception $e) {
-            if ($e instanceof \PHPOpenSourceSaver\JWTAuth\Exceptions\TokenInvalidException){
+            if ($e instanceof \Tymon\JWTAuth\Exceptions\TokenInvalidException){
                 return $this->createResponse(401, 'Token is Invalid',
                     [
                         'error' => 'Token is not registered in server'
                     ],
                     [
-                        route('api.landing')
+                        route('landing')
                     ]
                 );
-            }else if ($e instanceof \PHPOpenSourceSaver\JWTAuth\Exceptions\TokenExpiredException){
+            }else if ($e instanceof \Tymon\JWTAuth\Exceptions\TokenExpiredException){
                 return $this->createResponse(401, 'Token is Expired',
                     [
                         'error' => 'This token has passed its expiration time'
                     ],
                     [
-                        route('api.landing')
+                        route('landing')
                     ]
                 );
             }else{
@@ -48,7 +48,7 @@ class JwtMiddleware extends BaseMiddleware
                         'error' => 'Please double check it if you filled token'
                     ],
                     [
-                        route('api.landing')
+                        route('landing')
                     ]
                 );
             }

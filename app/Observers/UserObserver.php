@@ -3,9 +3,13 @@
 namespace App\Observers;
 
 use App\Models\User;
+use App\Traits\UploadFile;
+use Illuminate\Support\Facades\Hash;
 
 class UserObserver
 {
+    use UploadFile;
+
     /**
      * Handle the User "creating" event.
      *
@@ -29,6 +33,19 @@ class UserObserver
     }
 
     /**
+     * Handle the User "updating" event.
+     *
+     * @param  \App\Models\User  $user
+     * @return void
+     */
+    public function updating(User $user)
+    {
+        if ($this->checkFile('image', $user->getOriginal('logo'))) {
+            $this->deleteFile('image', $user->getOriginal('logo'));
+        }
+    }
+
+    /**
      * Handle the User "updated" event.
      *
      * @param  \App\Models\User  $user
@@ -36,7 +53,22 @@ class UserObserver
      */
     public function updated(User $user)
     {
-        $user->password = bcrypt($user->password);
+        if (!Hash::check($user->password, $user->getOriginal('password'))) {
+            $user->password = bcrypt($user->password);
+        }
+    }
+
+    /**
+     * Handle the User "deleting" event.
+     *
+     * @param  \App\Models\User  $user
+     * @return void
+     */
+    public function deleting(User $user)
+    {
+        if ($this->checkFile('image', $user->logo)) {
+            $this->deleteFile('image', $user->logo);
+        }
     }
 
     /**

@@ -14,15 +14,7 @@ interface EloquentInterface
      * @param array $relations
      * @return Collection
      */
-    public function all(array $columns = ['*'], array $relations = [], array $wheres = []): Collection;
-
-    /**
-     * Get all models.
-     *
-     * @param array $wheres
-     * @return Collection
-     */
-    public function allExist(array $wheres = []): Collection;
+    public function all(array $columns = ['*'], array $relations = []): Collection;
     
     /**
      * Get all trashed models.
@@ -43,16 +35,6 @@ interface EloquentInterface
     public function findById(int $modelId, array $columns = ['*'], array $relations = [], array $appends = []): ?Model;
     
     /**
-     * Find model by custom id.
-     *
-     * @param array $wheres
-     * @param array $columns
-     * @param array $relations
-     * @return Model
-     */
-    public function findByCustomId(array $wheres = [], array $columns = ['*'], array $relations = []): ?Model;
-    
-    /**
      * Find trashed model by id.
      *
      * @param int $modelId
@@ -61,28 +43,12 @@ interface EloquentInterface
     public function findTrashedById(int $modelId): ?Model;
     
     /**
-     * Find trashed model by custom id.
-     *
-     * @param array $wheres
-     * @return Model
-     */
-    public function findTrashedByCustomId(array $wheres = []): ?Model;
-    
-    /**
      * Find only trashed model by id.
      *
      * @param int $modelId
      * @return Model
      */
     public function findOnlyTrashedById(int $modelId): ?Model;
-
-    /**
-     * Find only trashed model by custom id.
-     *
-     * @param array $wheres
-     * @return Model
-     */
-    public function findOnlyTrashedByCustomId(array $wheres = []): ?Model;
     
     /**
      * Create a model.

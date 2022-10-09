@@ -2,7 +2,11 @@
 
 namespace App\Providers;
 
-use App\Models;
+use App\Models\Menu;
+use App\Models\Page;
+use App\Models\Category;
+use App\Models\Application;
+use Illuminate\Support\Facades\Cache;
 use Illuminate\Support\ServiceProvider;
 
 class ViewServiceProvider extends ServiceProvider
@@ -24,20 +28,20 @@ class ViewServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        // view()->composer('partials.sidebar.main', function ($view) {
-        //     $view->with('ctgrs', Models\Category::get());
-        // });
+        view()->composer('partials.sidebar.main', function ($view) {
+            $view->with('ctgrs', Category::get());
+        });
 
-        // view()->composer('partials.sidebar.main', function ($view) {
-        //     $view->with('pgs', Models\Page::get());
-        // });
+        view()->composer('partials.sidebar.main', function ($view) {
+            $view->with('pgs', Page::get());
+        });
 
-        // view()->composer('partials.sidebar.main', function ($view) {
-        //     $view->with('mns', Models\Menu::get());
-        // });
+        view()->composer('partials.sidebar.main', function ($view) {
+            $view->with('mns', Menu::get());
+        });
 
-        // view()->composer(['layouts.*', 'partials.head.icon', 'partials.head.meta', 'partials.navbar.main.logo', 'partials.navbar.landing.main'], function ($view) {
-        //     $$view->with('aplct', Models\Application::findOrFail(1));
-        // });
+        view()->composer(['layouts.*', 'partials.head.icon', 'partials.head.meta', 'partials.navbar.main.logo', 'partials.navbar.landing.main'], function ($view) {
+            $view->with('aplct', Application::findOrFail(1));
+        });
     }
 }

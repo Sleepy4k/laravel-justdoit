@@ -28,7 +28,7 @@ class AppServiceProvider extends ServiceProvider
     {
         // Carbon Locale
         Carbon::setLocale(config('app.locale'));
-        
+
         // Json Wrap
         JsonResource::withoutWrapping();
 

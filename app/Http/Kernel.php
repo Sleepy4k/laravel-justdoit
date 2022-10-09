@@ -16,11 +16,22 @@ class Kernel extends HttpKernel
     protected $middleware = [
         // \App\Http\Middleware\TrustHosts::class,
         \App\Http\Middleware\TrustProxies::class,
-        \Illuminate\Http\Middleware\HandleCors::class,
+        \Fruitcake\Cors\HandleCors::class,
         \App\Http\Middleware\PreventRequestsDuringMaintenance::class,
         \Illuminate\Foundation\Http\Middleware\ValidatePostSize::class,
         \App\Http\Middleware\TrimStrings::class,
         \Illuminate\Foundation\Http\Middleware\ConvertEmptyStringsToNull::class,
+
+        /*
+        * More info please go to "https://github.com/renatomarinho/laravel-page-speed"
+        */
+        \RenatoMarinho\LaravelPageSpeed\Middleware\InlineCss::class,
+        \RenatoMarinho\LaravelPageSpeed\Middleware\ElideAttributes::class,
+        \RenatoMarinho\LaravelPageSpeed\Middleware\InsertDNSPrefetch::class,
+        \RenatoMarinho\LaravelPageSpeed\Middleware\RemoveComments::class,
+        \RenatoMarinho\LaravelPageSpeed\Middleware\CollapseWhitespace::class,
+        // \RenatoMarinho\LaravelPageSpeed\Middleware\TrimUrls::class,
+        // \RenatoMarinho\LaravelPageSpeed\Middleware\DeferJavascript::class,
     ];
 
     /**
@@ -33,16 +44,19 @@ class Kernel extends HttpKernel
             \App\Http\Middleware\EncryptCookies::class,
             \Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse::class,
             \Illuminate\Session\Middleware\StartSession::class,
+            \Illuminate\Session\Middleware\AuthenticateSession::class,
             \Illuminate\View\Middleware\ShareErrorsFromSession::class,
             \App\Http\Middleware\VerifyCsrfToken::class,
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
+            
+            \App\Http\Middleware\Language::class,
         ],
 
         'api' => [
             // \Laravel\Sanctum\Http\Middleware\EnsureFrontendRequestsAreStateful::class,
             'throttle:api',
             \Illuminate\Routing\Middleware\SubstituteBindings::class,
-            \App\Http\Middleware\ApiHeader::class,
+            \App\Http\Middleware\ApiMiddleware::class,
         ],
     ];
 
@@ -56,18 +70,20 @@ class Kernel extends HttpKernel
     protected $routeMiddleware = [
         'auth' => \App\Http\Middleware\Authenticate::class,
         'auth.basic' => \Illuminate\Auth\Middleware\AuthenticateWithBasicAuth::class,
-        'auth.session' => \Illuminate\Session\Middleware\AuthenticateSession::class,
         'cache.headers' => \Illuminate\Http\Middleware\SetCacheHeaders::class,
         'can' => \Illuminate\Auth\Middleware\Authorize::class,
         'guest' => \App\Http\Middleware\RedirectIfAuthenticated::class,
         'password.confirm' => \Illuminate\Auth\Middleware\RequirePassword::class,
-        'signed' => \App\Http\Middleware\ValidateSignature::class,
+        'signed' => \Illuminate\Routing\Middleware\ValidateSignature::class,
         'throttle' => \Illuminate\Routing\Middleware\ThrottleRequests::class,
         'verified' => \Illuminate\Auth\Middleware\EnsureEmailIsVerified::class,
-        
+
         'jwt.verify' => \App\Http\Middleware\JwtMiddleware::class,
-        'jwt.refresh' => 'PHPOpenSourceSaver\JWTAuth\Http\Middleware\RefreshToken',
+        'jwt.auth' => 'Tymon\JWTAuth\Middleware\GetUserFromToken',
+        'jwt.refresh' => 'Tymon\JWTAuth\Middleware\RefreshToken',
         
+        'Language' => \App\Http\Middleware\Language::class,
+
         'role' => \Spatie\Permission\Middlewares\RoleMiddleware::class,
         'permission' => \Spatie\Permission\Middlewares\PermissionMiddleware::class,
         'role_or_permission' => \Spatie\Permission\Middlewares\RoleOrPermissionMiddleware::class,

@@ -246,8 +246,1672 @@ return [
             'group' => 'footer',
             'key' => 'copyright',
             'text' => [
-                'id' => 'Hak cipta © :year Quintet group',
-                'en' => 'Copyright © :year Quintet group'
+                'id' => 'Hak cipta © :year Puskomedia Indonesia Kreatif',
+                'en' => 'Copyright © :year Puskomedia Indonesia Kreatif'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'login.username',
+            'text' => [
+                'id' => 'Nama Pengguna',
+                'en' => 'Username'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'login.password',
+            'text' => [
+                'id' => 'Kata Sandi',
+                'en' => 'Password'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'login.submit',
+            'text' => [
+                'id' => 'Masuk',
+                'en' => 'Sign in'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'login.example.username',
+            'text' => [
+                'id' => 'Budi',
+                'en' => 'Sebastian'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'login..example.password',
+            'text' => [
+                'id' => '********',
+                'en' => '********'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'register.username',
+            'text' => [
+                'id' => 'Nama Pengguna',
+                'en' => 'Username'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'register.surename',
+            'text' => [
+                'id' => 'Nama Lengkap',
+                'en' => 'Full Name'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'register.password',
+            'text' => [
+                'id' => 'Kata sandi',
+                'en' => 'Password'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'register.confirm_password',
+            'text' => [
+                'id' => 'Konfirmasi sandi',
+                'en' => 'Confirm Password'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'register.submit',
+            'text' => [
+                'id' => 'Daftar',
+                'en' => 'Sign up'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'register.example.username',
+            'text' => [
+                'id' => 'Budi',
+                'en' => 'Sebastian'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'register.example.surename',
+            'text' => [
+                'id' => 'Budi Pekerti',
+                'en' => 'Sebastian Koro'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'register.example.password',
+            'text' => [
+                'id' => '********',
+                'en' => '********'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'register.example.confirm_password',
+            'text' => [
+                'id' => '********',
+                'en' => '********'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'account.username',
+            'text' => [
+                'id' => 'Nama Karyawan',
+                'en' => 'Employee Name'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'account.email',
+            'text' => [
+                'id' => 'Email',
+                'en' => 'Email'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'account.whatsapp_number',
+            'text' => [
+                'id' => 'Nomor Whatsapp',
+                'en' => 'Whatsapp Number'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'account.password',
+            'text' => [
+                'id' => 'Kata Sandi',
+                'en' => 'Password'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'account.confirm_password',
+            'text' => [
+                'id' => 'Konfirmasi Kata Sandi',
+                'en' => 'Confirm Password'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'account.company',
+            'text' => [
+                'id' => 'Peternakan',
+                'en' => 'Farm Name'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'account.select_company',
+            'text' => [
+                'id' => 'Pilih Peternakan',
+                'en' => 'Select Farm'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'account.role',
+            'text' => [
+                'id' => 'Jabatan',
+                'en' => 'Position'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'account.select_role',
+            'text' => [
+                'id' => 'Pilih Jabatan',
+                'en' => 'Select Position'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'account.submit.add',
+            'text' => [
+                'id' => 'Menambahkan',
+                'en' => 'Add'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'account.submit.edit',
+            'text' => [
+                'id' => 'Memperbarui',
+                'en' => 'Update'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'role.name',
+            'text' => [
+                'id' => 'Nama Jabatan',
+                'en' => 'Role Name'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'role.guard_name',
+            'text' => [
+                'id' => 'Platform',
+                'en' => 'Platform'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'role.select_guard_name',
+            'text' => [
+                'id' => 'Pilih Platform',
+                'en' => 'Select Platform'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'role.web',
+            'text' => [
+                'id' => 'Website',
+                'en' => 'Website'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'role.api',
+            'text' => [
+                'id' => 'System (API)',
+                'en' => 'System (API)'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'role.permission',
+            'text' => [
+                'id' => 'Izin',
+                'en' => 'Permission'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'role.submit.add',
+            'text' => [
+                'id' => 'Menambahkan',
+                'en' => 'Add'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'role.submit.edit',
+            'text' => [
+                'id' => 'Memperbarui',
+                'en' => 'Update'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'profile.setting.username',
+            'text' => [
+                'id' => 'Nama lengkap',
+                'en' => 'Full Name'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'profile.setting.email',
+            'text' => [
+                'id' => 'Surel',
+                'en' => 'Email'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'profile.setting.whatsapp_number',
+            'text' => [
+                'id' => 'Nomor Whatsapp',
+                'en' => 'Whatsapp Number'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'profile.setting.image',
+            'text' => [
+                'id' => 'Foto Profil',
+                'en' => 'Photo Profile'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'profile.setting.submit',
+            'text' => [
+                'id' => 'Memperbarui',
+                'en' => 'Update'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'profile.password.old_password',
+            'text' => [
+                'id' => 'Kata sandi saat ini',
+                'en' => 'Current Password'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'profile.password.new_password',
+            'text' => [
+                'id' => 'Kata sandi baru',
+                'en' => 'New Password'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'profile.password.confirm_new_password',
+            'text' => [
+                'id' => 'Konfirmasi kata sandi baru',
+                'en' => 'Confirm New Password'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'profile.password.submit',
+            'text' => [
+                'id' => 'Memperbarui',
+                'en' => 'Update'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'category.id',
+            'text' => [
+                'id' => 'Indeks',
+                'en' => 'Index'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'category.name',
+            'text' => [
+                'id' => 'Nama',
+                'en' => 'Name'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'category.label',
+            'text' => [
+                'id' => 'Label',
+                'en' => 'Label'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'category.permission',
+            'text' => [
+                'id' => 'Izin',
+                'en' => 'Permission'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'menu.name',
+            'text' => [
+                'id' => 'Nama',
+                'en' => 'Name'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'menu.label',
+            'text' => [
+                'id' => 'Label',
+                'en' => 'Label'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'menu.Icon',
+            'text' => [
+                'id' => 'Ikon',
+                'en' => 'Icon'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'menu.category',
+            'text' => [
+                'id' => 'Kategori',
+                'en' => 'category'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'menu.select_category',
+            'text' => [
+                'id' => 'Pilih Kategori',
+                'en' => 'Select Category'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'menu.permission',
+            'text' => [
+                'id' => 'Izin',
+                'en' => 'Permission'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'menu.submit.add',
+            'text' => [
+                'id' => 'Menambahkan',
+                'en' => 'Add'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'menu.submit.edit',
+            'text' => [
+                'id' => 'Memperbarui',
+                'en' => 'Edit'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'page.name',
+            'text' => [
+                'id' => 'Nama',
+                'en' => 'Name'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'page.label',
+            'text' => [
+                'id' => 'Label',
+                'en' => 'Label'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'page.menu',
+            'text' => [
+                'id' => 'Menu',
+                'en' => 'Menu'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'page.menu_id',
+            'text' => [
+                'id' => 'Id Menu',
+                'en' => 'Id Menu'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'page.select_menu',
+            'text' => [
+                'id' => 'Pilih Menu',
+                'en' => 'Select Menu'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'page.page_url',
+            'text' => [
+                'id' => 'Halaman URL (rute)',
+                'en' => 'Page URL (route)'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'page.permission',
+            'text' => [
+                'id' => 'Izin',
+                'en' => 'Permission'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'application.application_name',
+            'text' => [
+                'id' => 'Nama Aplikasi',
+                'en' => 'Application Name'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'application.application_icon',
+            'text' => [
+                'id' => 'Ikon Aplikasi',
+                'en' => 'Application Icon'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'application.application_author',
+            'text' => [
+                'id' => 'Pemilik Aplikasi',
+                'en' => 'Application Author'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'application.application_keywords',
+            'text' => [
+                'id' => 'Keyword Aplikasi',
+                'en' => 'Application Keyword'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'application.application_description',
+            'text' => [
+                'id' => 'Deskripsi Aplikasi',
+                'en' => 'Application Description'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'application.sidebar_name',
+            'text' => [
+                'id' => 'Nama Sidebar',
+                'en' => 'Sidebar Name'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'application.sidebar_icon',
+            'text' => [
+                'id' => 'Ikon Sidebar',
+                'en' => 'Sidebar Icon'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'choose.permission',
+            'text' => [
+                'id' => 'Izin',
+                'en' => 'Permission'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'choose.select_permission',
+            'text' => [
+                'id' => 'Pilih Izin',
+                'en' => 'Select Permission'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'choose.submit.add',
+            'text' => [
+                'id' => 'Menambahkan',
+                'en' => 'Add'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'choose.submit.edit',
+            'text' => [
+                'id' => 'Memperbarui',
+                'en' => 'Update'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'translate.group',
+            'text' => [
+                'id' => 'Kelompok',
+                'en' => 'Group'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'translate.key',
+            'text' => [
+                'id' => 'Kata Kunci',
+                'en' => 'Keyword'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'translate.lang_id',
+            'text' => [
+                'id' => 'Terjemahan Indonesia',
+                'en' => 'Indonesian Translation'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'translate.lang_en',
+            'text' => [
+                'id' => 'Terjemahan Inggris',
+                'en' => 'English Translation'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'translate.submit.add',
+            'text' => [
+                'id' => 'Menambahkan',
+                'en' => 'Add'
+            ]
+        ],
+        [
+            'group' => 'form',
+            'key' => 'translate.submit.edit',
+            'text' => [
+                'id' => 'Memperbarui',
+                'en' => 'Update'
+            ]
+        ],
+        [
+            'group' => 'page',
+            'key' => 'landing.signin',
+            'text' => [
+                'id' => 'Masuk',
+                'en' => 'Sign In'
+            ]
+        ],
+        [
+            'group' => 'page',
+            'key' => 'landing.signout',
+            'text' => [
+                'id' => 'Keluar',
+                'en' => 'Sign Out'
+            ]
+        ],
+        [
+            'group' => 'page',
+            'key' => 'landing.register',
+            'text' => [
+                'id' => 'Daftar',
+                'en' => 'Register'
+            ]
+        ],
+        [
+            'group' => 'page',
+            'key' => 'landing.dashboard',
+            'text' => [
+                'id' => 'Dashboard',
+                'en' => 'Dashboard'
+            ]
+        ],
+        [
+            'group' => 'page',
+            'key' => 'landing.profile',
+            'text' => [
+                'id' => 'Profil',
+                'en' => 'Profile'
+            ]
+        ],
+        [
+            'group' => 'page',
+            'key' => 'landing.description.head',
+            'text' => [
+                'id' => 'Mriga Satwa Sewaka',
+                'en' => 'Mriga Satwa Sewaka'
+            ]
+        ],
+        [
+            'group' => 'page',
+            'key' => 'landing.description.body',
+            'text' => [
+                'id' => 'Mengabdi Manusia Melalui Hewan',
+                'en' => 'Mengabdi Manusia Melalui Hewan'
+            ]
+        ],
+        [
+            'group' => 'page',
+            'key' => 'login.title',
+            'text' => [
+                'id' => 'Masuk ke akun Anda',
+                'en' => 'Sign in your account'
+            ]
+        ],
+        [
+            'group' => 'page',
+            'key' => 'login.question',
+            'text' => [
+                'id' => 'Tidak memiliki akun?',
+                'en' => 'Don\'t have an account?'
+            ]
+        ],
+        [
+            'group' => 'page',
+            'key' => 'login.register',
+            'text' => [
+                'id' => 'Daftar',
+                'en' => 'Sign up'
+            ]
+        ],
+        [
+            'group' => 'page',
+            'key' => 'register.title',
+            'text' => [
+                'id' => 'Daftarkan akun Anda',
+                'en' => 'Sign up your account'
+            ]
+        ],
+        [
+            'group' => 'page',
+            'key' => 'register.question',
+            'text' => [
+                'id' => 'Sudah memiliki akun?',
+                'en' => 'Already have an account?'
+            ]
+        ],
+        [
+            'group' => 'page',
+            'key' => 'register.login',
+            'text' => [
+                'id' => 'Masuk',
+                'en' => 'Sign in'
+            ]
+        ],
+        [
+            'group' => 'page',
+            'key' => 'dashboard.status.title',
+            'text' => [
+                'id' => 'Chart Status Ternak',
+                'en' => 'Livestock Status Chart'
+            ]
+        ],
+        [
+            'group' => 'page',
+            'key' => 'dashboard.status.sub_title',
+            'text' => [
+                'id' => 'chart hidup, mati, terjual, hilang',
+                'en' => 'live, dead, sold, lost chart'
+            ]
+        ],
+        [
+            'group' => 'page',
+            'key' => 'dashboard.status.value',
+            'text' => [
+                'id' => 'Nilai Total',
+                'en' => 'Total Value'
+            ]
+        ],
+        [
+            'group' => 'page',
+            'key' => 'dashboard.status.live',
+            'text' => [
+                'id' => 'Hidup',
+                'en' => 'Live'
+            ]
+        ],
+        [
+            'group' => 'page',
+            'key' => 'dashboard.status.death',
+            'text' => [
+                'id' => 'Mati',
+                'en' => 'Death'
+            ]
+        ],
+        [
+            'group' => 'page',
+            'key' => 'dashboard.status.sold',
+            'text' => [
+                'id' => 'Terjual',
+                'en' => 'Sold'
+            ]
+        ],
+        [
+            'group' => 'page',
+            'key' => 'dashboard.status.missing',
+            'text' => [
+                'id' => 'Hilang',
+                'en' => 'Missing'
+            ]
+        ],
+        [
+            'group' => 'page',
+            'key' => 'dashboard.gender.title',
+            'text' => [
+                'id' => 'Chart Gender Ternak',
+                'en' => 'Livestock Gender Chart'
+            ]
+        ],
+        [
+            'group' => 'page',
+            'key' => 'dashboard.gender.sub_title',
+            'text' => [
+                'id' => 'chart jantan, betina',
+                'en' => 'male, female chart'
+            ]
+        ],
+        [
+            'group' => 'page',
+            'key' => 'dashboard.gender.value',
+            'text' => [
+                'id' => 'Nilai Total',
+                'en' => 'Total Value'
+            ]
+        ],
+        [
+            'group' => 'page',
+            'key' => 'dashboard.gender.male',
+            'text' => [
+                'id' => 'Pejantan',
+                'en' => 'Male'
+            ]
+        ],
+        [
+            'group' => 'page',
+            'key' => 'dashboard.gender.female',
+            'text' => [
+                'id' => 'Betina',
+                'en' => 'Female'
+            ]
+        ],
+        [
+            'group' => 'page',
+            'key' => 'dashboard.total.title',
+            'text' => [
+                'id' => 'Chart Jumlah Ternak',
+                'en' => 'Livestock Number Chart'
+            ]
+        ],
+        [
+            'group' => 'page',
+            'key' => 'dashboard.total.sub_title',
+            'text' => [
+                'id' => 'Livestock',
+                'en' => 'Livestock'
+            ]
+        ],
+        [
+            'group' => 'page',
+            'key' => 'dashboard.total.value',
+            'text' => [
+                'id' => 'Nilai Total',
+                'en' => 'Total Value'
+            ]
+        ],
+        [
+            'group' => 'page',
+            'key' => 'dashboard.total.livestock',
+            'text' => [
+                'id' => 'Ternak',
+                'en' => 'Livestock'
+            ]
+        ],
+        [
+            'group' => 'page',
+            'key' => 'account.create',
+            'text' => [
+                'id' => 'Buat Halaman',
+                'en' => 'Create Account'
+            ]
+        ],
+        [
+            'group' => 'page',
+            'key' => 'account.list',
+            'text' => [
+                'id' => 'Daftar Halaman',
+                'en' => 'List Account'
+            ]
+        ],
+        [
+            'group' => 'page',
+            'key' => 'account.edit',
+            'text' => [
+                'id' => 'Ubah Halaman',
+                'en' => 'Edit Account'
+            ]
+        ],
+        [
+            'group' => 'page',
+            'key' => 'role.list',
+            'text' => [
+                'id' => 'Daftar Jabatan',
+                'en' => 'List Role'
+            ]
+        ],
+        [
+            'group' => 'page',
+            'key' => 'role.create',
+            'text' => [
+                'id' => 'Buat Jabatan',
+                'en' => 'Create Role'
+            ]
+        ],
+        [
+            'group' => 'page',
+            'key' => 'role.edit',
+            'text' => [
+                'id' => 'Ubah Jabatan',
+                'en' => 'Edit Role'
+            ]
+        ],
+        [
+            'group' => 'page',
+            'key' => 'profile.list',
+            'text' => [
+                'id' => 'Profil',
+                'en' => 'Profile'
+            ]
+        ],
+        [
+            'group' => 'page',
+            'key' => 'profile.edit.profile',
+            'text' => [
+                'id' => 'Pengaturan Profil',
+                'en' => 'Profile Setting'
+            ]
+        ],
+        [
+            'group' => 'page',
+            'key' => 'profile.edit.password',
+            'text' => [
+                'id' => 'Kata Sandi Profil',
+                'en' => 'Profile Password'
+            ]
+        ],
+        [
+            'group' => 'page',
+            'key' => 'category.list',
+            'text' => [
+                'id' => 'Daftar Kategori',
+                'en' => 'List Category'
+            ]
+        ],
+        [
+            'group' => 'page',
+            'key' => 'category.create',
+            'text' => [
+                'id' => 'Buat Kategori',
+                'en' => 'Create Category'
+            ]
+        ],
+        [
+            'group' => 'page',
+            'key' => 'category.edit',
+            'text' => [
+                'id' => 'Ubah Kategori',
+                'en' => 'Edit Category'
+            ]
+        ],
+        [
+            'group' => 'page',
+            'key' => 'menu.list',
+            'text' => [
+                'id' => 'Daftar Menu',
+                'en' => 'List Menu'
+            ]
+        ],
+        [
+            'group' => 'page',
+            'key' => 'menu.create',
+            'text' => [
+                'id' => 'Buat Menu',
+                'en' => 'Create Menu'
+            ]
+        ],
+        [
+            'group' => 'page',
+            'key' => 'menu.edit',
+            'text' => [
+                'id' => 'Ubah Menu',
+                'en' => 'Edit Menu'
+            ]
+        ],
+        [
+            'group' => 'page',
+            'key' => 'page.list',
+            'text' => [
+                'id' => 'Daftar Halaman',
+                'en' => 'List Page'
+            ]
+        ],
+        [
+            'group' => 'page',
+            'key' => 'page.create',
+            'text' => [
+                'id' => 'Buat Halaman',
+                'en' => 'Create Page'
+            ]
+        ],
+        [
+            'group' => 'page',
+            'key' => 'page.edit',
+            'text' => [
+                'id' => 'Ubah Halaman',
+                'en' => 'Edit Page'
+            ]
+        ],
+        [
+            'group' => 'page',
+            'key' => 'application.list',
+            'text' => [
+                'id' => 'Detail Aplikasi',
+                'en' => 'Detail Application'
+            ]
+        ],
+        [
+            'group' => 'page',
+            'key' => 'application.edit',
+            'text' => [
+                'id' => 'Ubah Detail Aplikasi',
+                'en' => 'Edit Detail Application'
+            ]
+        ],
+        [
+            'group' => 'page',
+            'key' => 'audit.title',
+            'text' => [
+                'id' => 'Log Audit',
+                'en' => 'Audit Log'
+            ]
+        ],
+        [
+            'group' => 'page',
+            'key' => 'import.format',
+            'text' => [
+                'id' => 'Note : tanggal lahir harus memiliki format',
+                'en' => 'Note : date of birth must have the format'
+            ]
+        ],
+        [
+            'group' => 'page',
+            'key' => 'import.time',
+            'text' => [
+                'id' => 'PM/AM',
+                'en' => 'PM/AM'
+            ]
+        ],
+        [
+            'group' => 'page',
+            'key' => 'import.import',
+            'text' => [
+                'id' => 'Import :category',
+                'en' => 'Import :category'
+            ]
+        ],
+        [
+            'group' => 'page',
+            'key' => 'import.template',
+            'text' => [
+                'id' => 'Unduh Template',
+                'en' => 'Download Template'
+            ]
+        ],
+        [
+            'group' => 'page',
+            'key' => 'translate.list',
+            'text' => [
+                'id' => 'Daftar Terjemahan',
+                'en' => 'List Translate'
+            ]
+        ],
+        [
+            'group' => 'page',
+            'key' => 'translate.create',
+            'text' => [
+                'id' => 'Buat Terjemahan',
+                'en' => 'Create Translate'
+            ]
+        ],
+        [
+            'group' => 'page',
+            'key' => 'translate.edit',
+            'text' => [
+                'id' => 'Ubah Terjemahan',
+                'en' => 'Edit Translate'
+            ]
+        ],
+        [
+            'group' => 'pagination',
+            'key' => 'first',
+            'text' => [
+                'id' => 'Pertama',
+                'en' => 'First'
+            ]
+        ],
+        [
+            'group' => 'pagination',
+            'key' => 'last',
+            'text' => [
+                'id' => 'Terakhir',
+                'en' => 'Last'
+            ]
+        ],
+        [
+            'group' => 'pagination',
+            'key' => 'previous',
+            'text' => [
+                'id' => 'Sebelumnya',
+                'en' => 'Previous'
+            ]
+        ],
+        [
+            'group' => 'pagination',
+            'key' => 'next',
+            'text' => [
+                'id' => 'Selanjutnya',
+                'en' => 'Next'
+            ]
+        ],
+        [
+            'group' => 'table',
+            'key' => 'audit.category',
+            'text' => [
+                'id' => 'Kategori',
+                'en' => 'Category'
+            ]
+        ],
+        [
+            'group' => 'table',
+            'key' => 'audit.description',
+            'text' => [
+                'id' => 'Deskripsi',
+                'en' => 'Description'
+            ]
+        ],
+        [
+            'group' => 'table',
+            'key' => 'audit.subject',
+            'text' => [
+                'id' => 'Subjek',
+                'en' => 'Subject'
+            ]
+        ],
+        [
+            'group' => 'table',
+            'key' => 'audit.user',
+            'text' => [
+                'id' => 'Pengguna',
+                'en' => 'User'
+            ]
+        ],
+        [
+            'group' => 'table',
+            'key' => 'audit.content',
+            'text' => [
+                'id' => 'Isi',
+                'en' => 'Content'
+            ]
+        ],
+        [
+            'group' => 'table',
+            'key' => 'audit.created_at',
+            'text' => [
+                'id' => 'Dibuat Pada',
+                'en' => 'Created At'
+            ]
+        ],
+        [
+            'group' => 'table',
+            'key' => 'audit.updated_at',
+            'text' => [
+                'id' => 'Diperbarui Pada',
+                'en' => 'Updated At'
+            ]
+        ],
+        [
+            'group' => 'table',
+            'key' => 'account.uid',
+            'text' => [
+                'id' => 'Indeks',
+                'en' => 'Index'
+            ]
+        ],
+        [
+            'group' => 'table',
+            'key' => 'account.username',
+            'text' => [
+                'id' => 'Nama Karyawan',
+                'en' => 'Employee Name'
+            ]
+        ],
+        [
+            'group' => 'table',
+            'key' => 'account.username',
+            'text' => [
+                'id' => 'Nama Karyawan',
+                'en' => 'Employee Name'
+            ]
+        ],
+        [
+            'group' => 'table',
+            'key' => 'account.email',
+            'text' => [
+                'id' => 'Email',
+                'en' => 'Email'
+            ]
+        ],
+        [
+            'group' => 'table',
+            'key' => 'account.whatsapp_number',
+            'text' => [
+                'id' => 'Nomor Whatsapp',
+                'en' => 'Whatsapp Number'
+            ]
+        ],
+        [
+            'group' => 'table',
+            'key' => 'account.company',
+            'text' => [
+                'id' => 'Peternakan',
+                'en' => 'Farm Name'
+            ]
+        ],
+        [
+            'group' => 'table',
+            'key' => 'account.role',
+            'text' => [
+                'id' => 'Peran',
+                'en' => 'Position'
+            ]
+        ],
+        [
+            'group' => 'table',
+            'key' => 'account.joined_at',
+            'text' => [
+                'id' => 'Bergabung Pada',
+                'en' => 'joined_at'
+            ]
+        ],
+        [
+            'group' => 'table',
+            'key' => 'account.action',
+            'text' => [
+                'id' => 'Tindakan',
+                'en' => 'Action'
+            ]
+        ],
+        [
+            'group' => 'table',
+            'key' => 'role.index',
+            'text' => [
+                'id' => 'Indeks',
+                'en' => 'Index'
+            ]
+        ],
+        [
+            'group' => 'table',
+            'key' => 'role.role_name',
+            'text' => [
+                'id' => 'Nama Jabatan',
+                'en' => 'Role Name'
+            ]
+        ],
+        [
+            'group' => 'table',
+            'key' => 'role.guard_name',
+            'text' => [
+                'id' => 'Platform',
+                'en' => 'Platform'
+            ]
+        ],
+        [
+            'group' => 'table',
+            'key' => 'role.action',
+            'text' => [
+                'id' => 'Tindakan',
+                'en' => 'Action'
+            ]
+        ],
+        [
+            'group' => 'table',
+            'key' => 'profile.username',
+            'text' => [
+                'id' => 'Nama Lengkap',
+                'en' => 'Full Name'
+            ]
+        ],
+        [
+            'group' => 'table',
+            'key' => 'profile.username',
+            'text' => [
+                'id' => 'Nama Lengkap',
+                'en' => 'Full Name'
+            ]
+        ],
+        [
+            'group' => 'table',
+            'key' => 'profile.email',
+            'text' => [
+                'id' => 'Surel',
+                'en' => 'Email'
+            ]
+        ],
+        [
+            'group' => 'table',
+            'key' => 'profile.email',
+            'text' => [
+                'id' => 'Surel',
+                'en' => 'Email'
+            ]
+        ],
+        [
+            'group' => 'table',
+            'key' => 'profile.company',
+            'text' => [
+                'id' => 'Peternakan',
+                'en' => 'Farm Name'
+            ]
+        ],
+        [
+            'group' => 'table',
+            'key' => 'profile.whatsapp_number',
+            'text' => [
+                'id' => 'Nomor whatsapp',
+                'en' => 'Whatsapp Number'
+            ]
+        ],
+        [
+            'group' => 'table',
+            'key' => 'profile.joined_at',
+            'text' => [
+                'id' => 'Bergabung pada',
+                'en' => 'Joined At'
+            ]
+        ],
+        [
+            'group' => 'table',
+            'key' => 'category.id',
+            'text' => [
+                'id' => 'Indeks',
+                'en' => 'Index'
+            ]
+        ],
+        [
+            'group' => 'table',
+            'key' => 'category.name',
+            'text' => [
+                'id' => 'Nama',
+                'en' => 'Name'
+            ]
+        ],
+        [
+            'group' => 'table',
+            'key' => 'category.label',
+            'text' => [
+                'id' => 'Label',
+                'en' => 'Label'
+            ]
+        ],
+        [
+            'group' => 'table',
+            'key' => 'category.action',
+            'text' => [
+                'id' => 'Tindakan',
+                'en' => 'Action'
+            ]
+        ],
+        [
+            'group' => 'table',
+            'key' => 'menu.id',
+            'text' => [
+                'id' => 'Indeks',
+                'en' => 'Index'
+            ]
+        ],
+        [
+            'group' => 'table',
+            'key' => 'menu.name',
+            'text' => [
+                'id' => 'Name',
+                'en' => 'Name'
+            ]
+        ],
+        [
+            'group' => 'table',
+            'key' => 'menu.label',
+            'text' => [
+                'id' => 'Label',
+                'en' => 'Label'
+            ]
+        ],
+        [
+            'group' => 'table',
+            'key' => 'menu.icon',
+            'text' => [
+                'id' => 'Ikon',
+                'en' => 'Icon'
+            ]
+        ],
+        [
+            'group' => 'table',
+            'key' => 'menu.category',
+            'text' => [
+                'id' => 'Kategori',
+                'en' => 'Category'
+            ]
+        ],
+        [
+            'group' => 'table',
+            'key' => 'menu.action',
+            'text' => [
+                'id' => 'Tindakan',
+                'en' => 'Action'
+            ]
+        ],
+        [
+            'group' => 'table',
+            'key' => 'menu.permission',
+            'text' => [
+                'id' => 'Izin',
+                'en' => 'Permission'
+            ]
+        ],
+        [
+            'group' => 'table',
+            'key' => 'page.id',
+            'text' => [
+                'id' => 'Indeks',
+                'en' => 'Index'
+            ]
+        ],
+        [
+            'group' => 'table',
+            'key' => 'page.name',
+            'text' => [
+                'id' => 'Nama',
+                'en' => 'Name'
+            ]
+        ],
+        [
+            'group' => 'table',
+            'key' => 'page.label',
+            'text' => [
+                'id' => 'Label',
+                'en' => 'Label'
+            ]
+        ],
+        [
+            'group' => 'table',
+            'key' => 'page.menu',
+            'text' => [
+                'id' => 'Menu',
+                'en' => 'Menu'
+            ]
+        ],
+        [
+            'group' => 'table',
+            'key' => 'page.page_ur',
+            'text' => [
+                'id' => 'Halaman URL',
+                'en' => 'Page URL (route)'
+            ]
+        ],
+        [
+            'group' => 'table',
+            'key' => 'page.action',
+            'text' => [
+                'id' => 'Tindakan',
+                'en' => 'Action'
+            ]
+        ],
+        [
+            'group' => 'table',
+            'key' => 'page.permission',
+            'text' => [
+                'id' => 'Izin',
+                'en' => 'Permission'
+            ]
+        ],
+        [
+            'group' => 'table',
+            'key' => 'application.name',
+            'text' => [
+                'id' => 'Nama Aplikasi',
+                'en' => 'Application Name'
+            ]
+        ],
+        [
+            'group' => 'table',
+            'key' => 'application.owner',
+            'text' => [
+                'id' => 'Pemilik Aplikasi',
+                'en' => 'Application Owner'
+            ]
+        ],
+        [
+            'group' => 'table',
+            'key' => 'application.keywords',
+            'text' => [
+                'id' => 'Keyword Aplikasi',
+                'en' => 'Application Keyword'
+            ]
+        ],
+        [
+            'group' => 'table',
+            'key' => 'application.description',
+            'text' => [
+                'id' => 'Deskripsi Aplikasi',
+                'en' => 'Application Description'
+            ]
+        ],
+        [
+            'group' => 'table',
+            'key' => 'application.sidebar_name',
+            'text' => [
+                'id' => 'Nama Sidebar',
+                'en' => 'Sidebar Name'
+            ]
+        ],
+        [
+            'group' => 'table',
+            'key' => 'empty.table',
+            'text' => [
+                'id' => 'Belum ada data yang tersedia',
+                'en' => 'No data available yet'
+            ]
+        ],
+        [
+            'group' => 'table',
+            'key' => 'empty.medical',
+            'text' => [
+                'id' => 'Belum ada catatan kesehatan yang tersedia',
+                'en' => 'No health records available yet'
+            ]
+        ],
+        [
+            'group' => 'table',
+            'key' => 'empty.company',
+            'text' => [
+                'id' => 'Belum ada daftar peternakan yang tersedia',
+                'en' => 'No list of farms available'
+            ]
+        ],
+        [
+            'group' => 'table',
+            'key' => 'empty.category',
+            'text' => [
+                'id' => 'Belum ada daftar kategori yang tersedia',
+                'en' => 'No list of categories available yet'
+            ]
+        ],
+        [
+            'group' => 'table',
+            'key' => 'empty.menu',
+            'text' => [
+                'id' => 'Belum ada daftar menu yang tersedia',
+                'en' => 'No menu list available yet'
+            ]
+        ],
+        [
+            'group' => 'table',
+            'key' => 'empty.account',
+            'text' => [
+                'id' => 'Belum ada daftar akun yang tersedia',
+                'en' => 'No account list available'
+            ]
+        ],
+        [
+            'group' => 'table',
+            'key' => 'empty.page',
+            'text' => [
+                'id' => 'Belum ada daftar halaman yang tersedia',
+                'en' => 'No page listings available'
+            ]
+        ],
+        [
+            'group' => 'table',
+            'key' => 'empty.role',
+            'text' => [
+                'id' => 'Belum ada daftar jabatan yang tersedia',
+                'en' => 'No job listings available yet'
+            ]
+        ],
+        [
+            'group' => 'table',
+            'key' => 'empty.datatable',
+            'text' => [
+                'id' => 'Belum ada data yang cocok',
+                'en' => 'No matching data yet'
+            ]
+        ],
+        [
+            'group' => 'table',
+            'key' => 'proccess',
+            'text' => [
+                'id' => 'Sedang memproses...',
+                'en' => 'Processing...'
+            ]
+        ],
+        [
+            'group' => 'table',
+            'key' => 'lenght',
+            'text' => [
+                'id' => 'tampilkan _MENU_ data',
+                'en' => 'show _MENU_ data'
+            ]
+        ],
+        [
+            'group' => 'table',
+            'key' => 'info',
+            'text' => [
+                'id' => 'menampilkan _START_ sampai _END_ dari _TOTAL_ data',
+                'en' => 'show _START_ to _END_ of _TOTAL_ data'
+            ]
+        ],
+        [
+            'group' => 'table',
+            'key' => 'infoEmpty',
+            'text' => [
+                'id' => 'menampilkan 0 sampai 0 dari 0 data',
+                'en' => 'show 0 to 0 of 0 data'
+            ]
+        ],
+        [
+            'group' => 'table',
+            'key' => 'infoFilter',
+            'text' => [
+                'id' => '(disaring dari _MAX_ data)',
+                'en' => '(filtered from _MAX_ data)'
+            ]
+        ],
+        [
+            'group' => 'table',
+            'key' => 'search',
+            'text' => [
+                'id' => 'mencari :',
+                'en' => 'search :'
+            ]
+        ],
+        [
+            'group' => 'table',
+            'key' => 'infoThousand',
+            'text' => [
+                'id' => ',',
+                'en' => ','
+            ]
+        ],
+        [
+            'group' => 'table',
+            'key' => 'loading',
+            'text' => [
+                'id' => 'Sedang memuat...',
+                'en' => 'Loading...'
+            ]
+        ],
+        [
+            'group' => 'table',
+            'key' => 'aria.newest',
+            'text' => [
+                'id' => ': Centang untuk mengurutkan kolom dalam urutan menaik',
+                'en' => '": Tick to sort columns in ascending order'
+            ]
+        ],
+        [
+            'group' => 'table',
+            'key' => 'aria.oldest',
+            'text' => [
+                'id' => ': Centang untuk mengurutkan kolom ke bawah',
+                'en' => ': Tick to sort column down'
             ]
         ],
         [

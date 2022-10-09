@@ -14,7 +14,7 @@ return [
      |
      */
 
-    'enabled' => env('APP_DEBUG', false),
+    'enabled' => env('DEBUGBAR_ENABLE', false),
     'except' => [
         'telescope*',
         'horizon*',
@@ -33,12 +33,12 @@ return [
      |
      */
     'storage' => [
-        'enabled'    => true,
+        'enabled'    => env('DEBUGBAR_ENABLE', false),
         'driver'     => env('DEBUGBAR_DRIVER', 'file'), // redis, file, pdo, socket, custom
-        'path'       => storage_path(env('DEBUGBAR_STORAGE_PATH', 'debugbar')), // For file driver
-        'connection' => env('DEBUGBAR_CONNECTION', null),   // Leave null for default connection (Redis/PDO)
+        'path'       => storage_path('debugbar'), // For file driver
+        'connection' => null,   // Leave null for default connection (Redis/PDO)
         'provider'   => '', // Instance of StorageInterface for custom driver
-        'hostname'   => env('DEBUGBAR_HOSTNAME', '127.0.0.1'), // Hostname to use with the "socket" driver
+        'hostname'   => env('DEBUGBAR_HOST', '127.0.0.1'), // Hostname to use with the "socket" driver
         'port'       => env('DEBUGBAR_PORT', 2304), // Port to use with the "socket" driver
     ],
 
@@ -98,7 +98,7 @@ return [
      |
      */
 
-    'include_vendors' => env('DEBUGBAR_INCLUDE_VENDOR', true),
+    'include_vendors' => true,
 
     /*
      |--------------------------------------------------------------------------
@@ -126,7 +126,7 @@ return [
      | in the Messages tab.
      |
      */
-    'error_handler' => false,
+    'error_handler' => env('DEBUGBAR_ERROR_HANDLER', false),
 
     /*
      |--------------------------------------------------------------------------
@@ -137,7 +137,7 @@ return [
      | Extension, without the server-side code. It uses Debugbar collectors instead.
      |
      */
-    'clockwork' => env('DEBUGBAR_USE_CLOCKWORK', false),
+    'clockwork' => env('DEBUGBAR_CLOCKWORK', false),
 
     /*
      |--------------------------------------------------------------------------
@@ -165,13 +165,13 @@ return [
         'mail'            => true,  // Catch mail messages
         'laravel'         => true, // Laravel version and environment
         'events'          => true, // All events fired
-        'default_request' => true, // Regular or special Symfony request logger
+        'default_request' => false, // Regular or special Symfony request logger
         'logs'            => true, // Add the latest log messages
         'files'           => true, // Show the included files
         'config'          => true, // Display config settings
         'cache'           => true, // Display cache events
         'models'          => true,  // Display models
-        'livewire'        => false,  // Display Livewire (when available)
+        'livewire'        => true,  // Display Livewire (when available)
     ],
 
     /*
@@ -197,8 +197,8 @@ return [
                 'enabled' => false,
                 'types' => ['SELECT'],     // Deprecated setting, is always only SELECT
             ],
-            'hints'             => false,    // Show hints for common mistakes
-            'show_copy'         => false,    // Show copy button next to the query
+            'hints'             => true,    // Show hints for common mistakes
+            'show_copy'         => true,    // Show copy button next to the query
         ],
         'mail' => [
             'full_log' => false,
@@ -241,7 +241,7 @@ return [
      | from trying to overcome bugs like this: http://trac.nginx.org/nginx/ticket/97
      |
      */
-    'route_prefix' => env('DEBUGBAR_PREFIX', '_debugbar'),
+    'route_prefix' => '_debugbar',
 
     /*
      |--------------------------------------------------------------------------

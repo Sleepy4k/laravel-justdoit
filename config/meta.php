@@ -8,7 +8,7 @@ return [
     |--------------------------------------------------------------------------
     */
 
-    'author' => env('META_AUTHOR', 'Benjamin4k'),
+    'author' => env('META_AUTHOR', 'Sleepy4k'),
 
     /*
     |--------------------------------------------------------------------------
@@ -16,7 +16,7 @@ return [
     |--------------------------------------------------------------------------
     */
 
-    'description' => env('META_DESCRIPTION', 'Shit App'),
+    'description' => env('META_DESCRIPTION', 'Dadidu Eternak App'),
 
     /*
     |--------------------------------------------------------------------------
@@ -24,5 +24,5 @@ return [
     |--------------------------------------------------------------------------
     */
 
-    'keyword' => env('META_KEYWORD', 'Website, Paid, Expensive'),
+    'keyword' => env('META_KEYWORD', 'Ternak, Dadidu, Puskomedia'),
 ];

@@ -13,7 +13,7 @@ return [
          * With Model: App\User (default model)
          * Export filename: users_timestamp
          */
-        'base'  => env('DATATABLES_DIRECTORY', 'DataTables'),
+        'base'  => 'DataTables',
 
         /*
          * Base namespace/directory where your model's are located.
@@ -37,7 +37,7 @@ return [
      * Snappy package: barryvdh/laravel-snappy
      * Excel package: maatwebsite/excel
      */
-    'pdf_generator' => env('DATATABLES_PDF_GENERATOR', 'snappy'),
+    'pdf_generator' => 'excel',
 
     /*
      * Snappy PDF options.
@@ -57,7 +57,7 @@ return [
      * Default html builder parameters.
      */
     'parameters'    => [
-        'dom'     => 'Bfrtip',
+        'dom'     => 'lBfrtip',
         'order'   => [[0, 'desc']],
         'buttons' => [
             'create',
@@ -75,7 +75,7 @@ return [
         /*
          * Default columns to generate when not set.
          */
-        'columns' => 'id,add your columns,created_at,updated_at',
+        'columns' => 'id,deleted_at,created_at,updated_at',
 
         /*
          * Default buttons to generate when not set.
@@ -85,6 +85,6 @@ return [
         /*
          * Default DOM to generate when not set.
          */
-        'dom' => 'Bfrtip',
+        'dom' => 'lBfrtip',
     ],
 ];

@@ -38,7 +38,7 @@ return [
     /*
      * DataTables internal index id response column name.
      */
-    'index_column'   => env('DATATABLES_INDEX_COLUMN', 'DT_RowIndex'),
+    'index_column'   => 'DT_RowIndex',
 
     /*
      * List of available builders for DataTables.
@@ -48,6 +48,7 @@ return [
         'eloquent'   => Yajra\DataTables\EloquentDataTable::class,
         'query'      => Yajra\DataTables\QueryDataTable::class,
         'collection' => Yajra\DataTables\CollectionDataTable::class,
+        'resource'   => Yajra\DataTables\ApiResourceDataTable::class,
     ],
 
     /*
@@ -75,7 +76,7 @@ return [
      * 'throw'          - Throws a \Yajra\DataTables\Exceptions\Exception. Use your custom error handler if needed.
      * 'custom message' - Any friendly message to be displayed to the user. You can also use translation key.
      */
-    'error'          => env('DATATABLES_ERROR', null),
+    'error'          => env('DATATABLES_ERROR', false),
 
     /*
      * Default columns definition of dataTable utility functions.
@@ -96,7 +97,7 @@ return [
          * List of columns that are allowed to display html content.
          * Note: Adding columns to list will make us available to XSS attacks.
          */
-        'raw'       => ['action'],
+        'raw'       => ['action', 'medical_records'],
 
         /*
          * List of columns are forbidden from being searched/sorted.
@@ -118,9 +119,4 @@ return [
         'options' => 0,
     ],
 
-    /*
-     * Default condition to determine if a parameter is a callback or not.
-     * Callbacks needs to start by those terms, or they will be cast to string.
-     */
-    'callback' => ['$', '$.', 'function'],
 ];

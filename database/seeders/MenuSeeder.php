@@ -16,55 +16,28 @@ class MenuSeeder extends Seeder
     {
         $menus = [
             [
-                'name' => 'main-statistic',
+                'name' => 'main-dashboard',
                 'label' => 'Dashboard',
                 'icon' => 'bars',
                 'category' => '1',
                 'type' => 'single',
                 'page_url' => 'statistic.index',
-                'permission' => 'statistic.index'
+                'permission' => 'none'
             ],
             [
-                'name' => 'main-transaction',
-                'label' => 'Data Transaksi',
+                'name' => 'main-task',
+                'label' => 'List Tugas',
                 'icon' => 'bars',
                 'category' => '1',
                 'type' => 'single',
-                'page_url' => 'transaction.index',
-                'permission' => 'transaction.index'
+                'page_url' => 'task.index',
+                'permission' => 'task.index'
             ],
             [
-                'name' => 'main-tour',
-                'label' => 'Data Wisata',
-                'icon' => 'bars',
-                'category' => '2',
-                'type' => 'single',
-                'page_url' => 'tour.index',
-                'permission' => 'tour.index'
-            ],
-            [
-                'name' => 'setting-account',
-                'label' => 'Akun Karyawan',
-                'icon' => 'bars',
-                'category' => '2',
-                'type' => 'single',
-                'page_url' => 'account.index',
-                'permission' => 'account.index'
-            ],
-            [
-                'name' => 'setting-company',
-                'label' => 'Profile Perusahaan',
-                'icon' => 'bars',
-                'category' => '2',
-                'type' => 'single',
-                'page_url' => 'company.index',
-                'permission' => 'company.index'
-            ],
-            [
-                'name' => 'admin-akun',
+                'name' => 'admin-account',
                 'label' => 'Akun Pengguna',
                 'icon' => 'bars',
-                'category' => '3',
+                'category' => '2',
                 'type' => 'single',
                 'page_url' => 'akun.index',
                 'permission' => 'akun.index'
@@ -73,7 +46,7 @@ class MenuSeeder extends Seeder
                 'name' => 'admin-role',
                 'label' => 'Role',
                 'icon' => 'bars',
-                'category' => '3',
+                'category' => '2',
                 'type' => 'single',
                 'page_url' => 'role.index',
                 'permission' => 'role.index'
@@ -82,7 +55,7 @@ class MenuSeeder extends Seeder
                 'name' => 'system-translate',
                 'label' => 'Terjemahan',
                 'icon' => 'bars',
-                'category' => '4',
+                'category' => '3',
                 'type' => 'single',
                 'page_url' => 'translate.index',
                 'permission' => 'translate.index'
@@ -91,7 +64,7 @@ class MenuSeeder extends Seeder
                 'name' => 'system-sidebar',
                 'label' => 'Side Bar',
                 'icon' => 'bars',
-                'category' => '4',
+                'category' => '3',
                 'type' => 'parent',
                 'permission' => 'sidebar.menu'
             ],
@@ -99,7 +72,7 @@ class MenuSeeder extends Seeder
                 'name' => 'system-customize',
                 'label' => 'Personalisasi',
                 'icon' => 'bars',
-                'category' => '4',
+                'category' => '3',
                 'type' => 'single',
                 'page_url' => 'application.index',
                 'permission' => 'application.index'
@@ -108,7 +81,7 @@ class MenuSeeder extends Seeder
                 'name' => 'audit-model',
                 'label' => 'Model Log',
                 'icon' => 'bars',
-                'category' => '5',
+                'category' => '4',
                 'type' => 'single',
                 'page_url' => 'model.index',
                 'permission' => 'model.index'
@@ -117,7 +90,7 @@ class MenuSeeder extends Seeder
                 'name' => 'audit-auth',
                 'label' => 'Authenticate Log',
                 'icon' => 'bars',
-                'category' => '5',
+                'category' => '4',
                 'type' => 'single',
                 'page_url' => 'auth.index',
                 'permission' => 'auth.index'
@@ -126,7 +99,7 @@ class MenuSeeder extends Seeder
                 'name' => 'audit-system',
                 'label' => 'System Log',
                 'icon' => 'bars',
-                'category' => '5',
+                'category' => '4',
                 'type' => 'single',
                 'page_url' => 'system.index',
                 'permission' => 'system.index'
@@ -135,7 +108,7 @@ class MenuSeeder extends Seeder
                 'name' => 'audit-query',
                 'label' => 'Query Log',
                 'icon' => 'bars',
-                'category' => '5',
+                'category' => '4',
                 'type' => 'single',
                 'page_url' => 'query.index',
                 'permission' => 'query.index'

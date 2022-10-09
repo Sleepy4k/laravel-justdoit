@@ -1,6 +1,8 @@
 <?php
 
-use App\Http\Controllers\Fallback;
+use App\Http\Controllers\Api\Main;
+use App\Http\Controllers\Api\Auth;
+use App\Http\Controllers\Api\Error;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,8 +16,22 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::prefix(config('app.version'))->group(function () {
-    require __DIR__.'/'.config('app.version').'/api.php';
+// Authenticate API Route
+Route::post('login', [Auth\LoginController::class, 'index'])->name('api.login');
+Route::post('register', [Auth\RegisterController::class, 'index'])->name('api.register');
+
+Route::middleware('jwt.verify')->group(function() {
+    Route::post('logout', [Auth\LogoutController::class, 'index'])->name('api.logout');
+    Route::post('refresh', [Auth\RefreshController::class, 'index'])->name('api.refresh');
 });
 
-Route::fallback([Fallback\ApiController::class, 'index']);
+// Main API Route
+Route::middleware('jwt.verify')->group(function() {
+    Route::get('task', [Main\TaskController::class, 'index'])->name('api.task.index');
+    Route::post('task', [Main\TaskController::class, 'store'])->name('api.task.store');
+    Route::patch('task', [Main\TaskController::class, 'update'])->name('api.task.update');
+    Route::delete('task', [Main\TaskController::class, 'destroy'])->name('api.task.destroy');
+});
+
+// Api Fallback Respons
+Route::fallback([Error\FallbackController::class, 'index']);

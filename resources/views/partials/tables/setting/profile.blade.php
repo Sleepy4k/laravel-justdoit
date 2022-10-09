@@ -12,42 +12,16 @@
                 </x-table::content>
             </x-table::col>
         </x-table::row>
-    
+
         <x-table::row class="mb-3">
             <x-table::col class="6">
                 <x-table::title class="f-w-500">
-                    @lang('table.profile.email')
+                    @lang('table.profile.surename')
                 </x-table::title>
             </x-table::col>
             <x-table::col class="6">
                 <x-table::content>
-                    {{ $user->email }}
-                </x-table::content>
-            </x-table::col>
-        </x-table::row>
-    
-        <x-table::row class="mb-3">
-            <x-table::col class="6">
-                <x-table::title class="f-w-500">
-                    @lang('table.profile.name')
-                </x-table::title>
-            </x-table::col>
-            <x-table::col class="6">
-                <x-table::content>
-                    {{ $user->name }}
-                </x-table::content>
-            </x-table::col>
-        </x-table::row>
-    
-        <x-table::row class="mb-3">
-            <x-table::col class="6">
-                <x-table::title class="f-w-500">
-                    @lang('table.profile.whatsapp_number')
-                </x-table::title>
-            </x-table::col>
-            <x-table::col class="6">
-                <x-table::content>
-                    ({{ config('app.phone_code') }}){{ $user->whatsapp_number }}
+                    {{ $user->surename }}
                 </x-table::content>
             </x-table::col>
         </x-table::row>

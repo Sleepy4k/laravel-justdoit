@@ -18,7 +18,7 @@ class PageSeeder extends Seeder
             [
                 'name' => 'sidebar-category',
                 'label' => 'Kategori',
-                'menu_id' => 8,
+                'menu_id' => 6,
                 'icon' => 'bars',
                 'page_url' => 'category.index',
                 'permission' => 'category.index'
@@ -26,7 +26,7 @@ class PageSeeder extends Seeder
             [
                 'name' => 'sidebar-menu',
                 'label' => 'Menu',
-                'menu_id' => 8,
+                'menu_id' => 6,
                 'icon' => 'bars',
                 'page_url' => 'menu.index',
                 'permission' => 'menu.index'
@@ -34,7 +34,7 @@ class PageSeeder extends Seeder
             [
                 'name' => 'sidebar-page',
                 'label' => 'Halaman',
-                'menu_id' => 8,
+                'menu_id' => 6,
                 'icon' => 'bars',
                 'page_url' => 'page.index',
                 'permission' => 'page.index'

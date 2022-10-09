@@ -7,8 +7,8 @@
 <meta name="keywords" content="@isset($aplct->application_keywords) {{ $aplct->application_keywords }} @else {{ config("meta.keyword") }} @endisset">
 <meta name="description" content="@isset($aplct->application_description) {{ $aplct->application_description }} @else {{ config("meta.description") }} @endisset">
 
-<meta property="og:site_name" content="@isset($aplct->application_name) {{ $aplct->application_name }} @else {{ config("app.name", "Benjamin4k") }} @endisset">
-<meta property="og:title" content="@isset($aplct->application_name) {{ $aplct->application_name }} @else {{ config("app.name", "Benjamin4k") }} @endisset">
+<meta property="og:site_name" content="@isset($aplct->application_name) {{ $aplct->application_name }} @else {{ config("app.name", "Eternak") }} @endisset">
+<meta property="og:title" content="@isset($aplct->application_name) {{ $aplct->application_name }} @else {{ config("app.name", "Eternak") }} @endisset">
 <meta property="og:description" content="@isset($aplct->application_description) {{ $aplct->application_description }} @else {{ config("meta.description") }} @endisset">
 <meta property="og:type" content="website">
 <meta property="og:locale" content="{{ str_replace('_', '-', app()->getLocale()) }}">
@@ -19,5 +19,5 @@
 <meta property="og:image:alt" content="@isset($aplct->application_description) {{ $aplct->application_description }} @else {{ config("meta.description") }} @endisset">
 
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="@isset($aplct->application_name) {{ $aplct->application_name }} @else {{ config("app.name", "Benjamin4k") }} @endisset">
+<meta name="twitter:title" content="@isset($aplct->application_name) {{ $aplct->application_name }} @else {{ config("app.name", "Eternak") }} @endisset">
 <meta name="twitter:image" content="@isset($aplct->application_icon) @empty(file_exists(public_path('storage/images/'.$aplct->application_icon))) {{ asset('images/favicon.png') }} @else {{ asset('storage/images/'.$aplct->application_icon) }} @endempty @else {{ asset('images/favicon.png') }} @endisset">

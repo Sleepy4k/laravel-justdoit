@@ -15,24 +15,17 @@ class UserSeeder extends Seeder
     public function run()
     {
         User::create([
-            'username' => 'root',
-            'password' => 'root123',
-            'email' => 'root@quintet.group.id',
-            'phone_number' => '62123456789'
-        ])->assignRole('superadmin');
-
-        User::create([
             'username' => 'admin',
-            'password' => 'admin123',
-            'email' => 'admin@quintet.group.id',
-            'phone_number' => '62234567890'
-        ])->assignRole('admin');
+            'surename' => 'Admin Just Do It',
+            'language' => 'en',
+            'password' => 'admin123'
+        ])->assignRole('root');
 
         User::create([
-            'username' => 'loket',
-            'password' => 'loket123',
-            'email' => 'loket@quintet.group.id',
-            'phone_number' => '62345678901'
-        ])->assignRole('loket');
+            'username' => 'User',
+            'surename' => 'User Just Do It',
+            'language' => 'en',
+            'password' => 'user123'
+        ])->assignRole('user');
     }
 }

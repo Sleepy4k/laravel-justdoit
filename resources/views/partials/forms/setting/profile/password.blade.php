@@ -5,7 +5,7 @@
                 <x-form-input-group-text>
                     <x-icon::fontawesome type="solid" icon="user-lock"/>
                 </x-form-input-group-text>
-                <x-form-input type="text" name="username" :value="old('username')" required autofocus/>
+                <x-form-input type="text" name="old_password" :value="old('old_password')" required autofocus/>
             </x-form-input-group>
         </x-form::group>
     </x-form::row>

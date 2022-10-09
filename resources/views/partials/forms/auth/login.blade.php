@@ -1,11 +1,11 @@
 <x-form :action="route('login.store')">
     <x-form::row>
         <x-form::group class="col-md-12">
-            <x-form-input-group :label="trans('form.login.whatsapp')">
+            <x-form-input-group :label="trans('form.login.username')">
                 <x-form-input-group-text>
-                    <x-icon::custom :icon="config('app.phone_code')"/>
+                    <x-icon::fontawesome type="solid" icon="user"/>
                 </x-form-input-group-text>
-                <x-form-input type="text" name="whatsapp_number" :placeholder="trans('form.login.example.whatsapp')" :value="old('whatsapp_number')" required autofocus/>
+                <x-form-input type="text" name="username" :placeholder="trans('form.login.example.username')" :value="old('username')" required autofocus/>
             </x-form-input-group>
         </x-form::group>
     </x-form::row>

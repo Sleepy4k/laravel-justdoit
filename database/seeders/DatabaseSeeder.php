@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\FarmData;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -17,7 +18,7 @@ class DatabaseSeeder extends Seeder
         $this->call(PageSeeder::class);
         $this->call(RoleSeeder::class);
         $this->call(UserSeeder::class);
-        $this->call(CompanySeeder::class);
+        $this->call(TaskSeeder::class);
         $this->call(CategorySeeder::class);
         $this->call(LanguageSeeder::class);
         $this->call(ApplicationSeeder::class);

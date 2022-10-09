@@ -5,7 +5,7 @@
 
         <title>
             @hasSection ('title') @yield('title') | @endif
-            @isset($aplct->application_name) {{ $aplct->application_name }} @else {{ config("app.name", "Benjamin4k") }} @endisset
+            @isset($aplct->application_name) {{ $aplct->application_name }} @else {{ config("app.name", "Eternak") }} @endisset
         </title>
 
         @includeIf('partials.head.icon')

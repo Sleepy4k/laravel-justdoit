@@ -1,10 +1,10 @@
 <?php
 
-use Illuminate\Support\Facades\Schema;
-use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
+use Illuminate\Database\Schema\Blueprint;
+use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
+class CreateUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,11 +15,13 @@ return new class extends Migration
     {
         Schema::create('users', function (Blueprint $table) {
             $table->id();
-            $table->string('surename');
-            $table->string('whatsapp_number')->unique();
+            $table->string('username')->unique();
+            $table->string('surename')->default('NULL');
+            $table->enum('language', ['en', 'id'])->default('en');
+            $table->string('logo')->nullable()->default('NULL');
             $table->string('password');
-            $table->bigInteger('company');
             $table->rememberToken();
+            $table->softDeletes();
             $table->timestamps();
         });
     }
@@ -33,4 +35,4 @@ return new class extends Migration
     {
         Schema::dropIfExists('users');
     }
-};
+}

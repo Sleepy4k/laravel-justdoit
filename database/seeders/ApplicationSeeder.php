@@ -14,17 +14,12 @@ class ApplicationSeeder extends Seeder
      */
     public function run()
     {
-        $applications = [
-            [
-                'name' => config('app.name'),
-                'author' => config('meta.author'),
-                'keywords' => config('meta.keyword'),
-                'description' => config('meta.description')
-            ]
-        ];
-
-        foreach ($applications as $application) {
-            Application::create($application);
-        }
+        Application::create([
+            'application_name' => 'Just Do It',
+            'application_author' => 'Benjamin4k',
+            'application_keywords' => 'Todo list, Note, Laravel',
+            'application_description' => 'Todo list app that let you take notes for everyday',
+            'sidebar_name' => 'JustDoIt'
+        ]);
     }
 }

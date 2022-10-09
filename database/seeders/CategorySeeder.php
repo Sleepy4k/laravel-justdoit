@@ -17,23 +17,23 @@ class CategorySeeder extends Seeder
         $categories = [
             [
                 'name' => 'main',
-                'label' => 'Main Menu'
-            ],
-            [
-                'name' => 'setting',
-                'label' => 'Setting Menu'
+                'label' => 'Main Menu',
+                'permission' => 'main.menu'
             ],
             [
                 'name' => 'admin',
-                'label' => 'Admin Menu'
+                'label' => 'Admin Menu',
+                'permission' => 'admin.menu'
             ],
             [
                 'name' => 'system',
-                'label' => 'System Menu'
+                'label' => 'System Menu',
+                'permission' => 'system.menu'
             ],
             [
                 'name' => 'audit',
-                'label' => 'Audit Menu'
+                'label' => 'Audit Menu',
+                'permission' => 'audit.menu'
             ]
         ];
 

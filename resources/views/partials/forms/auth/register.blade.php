@@ -8,33 +8,12 @@
                 <x-form-input type="text" name="username" :placeholder="trans('form.register.example.username')" :value="old('username')" required autofocus/>
             </x-form-input-group>
         </x-form::group>
-
         <x-form::group class="col-md-6">
-            <x-form-input-group :label="trans('form.company.name')">
+            <x-form-input-group :label="trans('form.register.surename')">
                 <x-form-input-group-text>
-                    <x-icon::fontawesome type="solid" icon="building"/>
+                    <x-icon::fontawesome type="solid" icon="user"/>
                 </x-form-input-group-text>
-                <x-form-input type="text" name="company" :placeholder="trans('form.company.example.name')" :value="old('company')" required autofocus/>
-            </x-form-input-group>
-        </x-form::group>
-    </x-form::row>
-
-    <x-form::row>
-        <x-form::group class="col-md-6">
-            <x-form-input-group :label="trans('form.register.email')">
-                <x-form-input-group-text>
-                    <x-icon::fontawesome type="solid" icon="envelope"/>
-                </x-form-input-group-text>
-                <x-form-input type="email" name="email" :placeholder="trans('form.register.example.email')" :value="old('email')" required autofocus/>
-            </x-form-input-group>
-        </x-form::group>
-
-        <x-form::group class="col-md-6">
-            <x-form-input-group :label="trans('form.register.whatsapp')">
-                <x-form-input-group-text>
-                    <x-icon::custom :icon="config('app.phone_code')"/>
-                </x-form-input-group-text>
-                <x-form-input type="text" name="whatsapp_number" :placeholder="trans('form.register.example.whatsapp')" :value="old('whatsapp_number')" required autofocus/>
+                <x-form-input type="text" name="surename" :placeholder="trans('form.register.example.surename')" :value="old('surename')" required autofocus/>
             </x-form-input-group>
         </x-form::group>
     </x-form::row>

@@ -1,0 +1,38 @@
+<?php
+
+return [
+    /*
+    |--------------------------------------------------------------------------
+    |   Custom Validation Attributes
+    |--------------------------------------------------------------------------
+    |
+    |   The following language lines are used to swap our attribute placeholder
+    |   with something more reader friendly such as "E-Mail Address" instead
+    |   of "email". This simply helps us make our message more expressive.
+    |
+    */
+
+    'attributes' => [
+        'whatsapp_number'           => trans('form.login.whatsapp'),
+        'password'                  => trans('form.login.password'),
+        'confirm_password'          => trans('form.register.confirm_password'),
+        'old_password'              => trans('form.profile.password.old_password'),
+
+        'user_name'                 => trans('form.register.username'),
+        'user_email'                => trans('form.register.email'),
+        'user_number'               => trans('form.register.whatsapp'),
+        'user_password'             => trans('form.register.password'),
+        'user_confirm_password'     => trans('form.register.confirm_password'),
+        'company_name'              => trans('form.company.name'),
+        'company_email'             => trans('form.company.email'),
+        'company_website'           => trans('form.company.website'),
+
+        'application_name'          => trans('form.application.application_name'),
+        'application_icon'          => trans('form.application.application_icon'),
+        'application_author'        => trans('form.application.application_author'),
+        'application_keywords'      => trans('form.application.application_keywords'),
+        'application_description'   => trans('form.application.application_description'),
+        'sidebar_name'              => trans('form.application.sidebar_name'),
+        'sidebar_icon'              => trans('form.application.sidebar_icon'),
+    ]
+];

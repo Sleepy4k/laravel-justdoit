@@ -1,18 +1,18 @@
 <?php
 
-namespace App\Console\Commands\Benjamin4k;
+namespace App\Console\Commands;
 
 use Illuminate\Console\Command;
 use Illuminate\Support\Facades\Artisan;
 
-class ReCache extends Command
+class ServerReCache extends Command
 {
     /**
      * The name and signature of the console command.
      *
      * @var string
      */
-    protected $signature = 'benjamin4k:recache';
+    protected $signature = 'custom:recache';
 
     /**
      * The console command description.
@@ -20,6 +20,16 @@ class ReCache extends Command
      * @var string
      */
     protected $description = 'Remove all cache and cache it again';
+
+    /**
+     * Create a new command instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        parent::__construct();
+    }
 
     /**
      * Execute the console command.
@@ -54,8 +64,6 @@ class ReCache extends Command
         $this->info('Events cached successfully!');
 
         // Notify
-        $this->info('Cache successfuly regenerate!');
-
-        return Command::SUCCESS;
+        return $this->info('Cache successfuly regenerate!');
     }
 }

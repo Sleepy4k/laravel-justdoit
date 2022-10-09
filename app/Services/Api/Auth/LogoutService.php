@@ -3,7 +3,7 @@
 namespace App\Services\Api\Auth;
 
 use App\Traits\ApiRespons;
-use App\Http\Transformer\Auth\LogoutResource;
+use App\Http\Resources\Auth\LogoutResource;
 
 class LogoutService
 {

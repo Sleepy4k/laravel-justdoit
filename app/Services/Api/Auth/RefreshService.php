@@ -3,7 +3,7 @@
 namespace App\Services\Api\Auth;
 
 use App\Traits\ApiRespons;
-use App\Http\Transformer\Auth\LoginResource;
+use App\Http\Resources\Auth\LoginResource;
 
 class RefreshService
 {

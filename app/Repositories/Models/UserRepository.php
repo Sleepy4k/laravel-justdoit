@@ -23,4 +23,54 @@ class UserRepository extends EloquentRepository implements UserInterface
     {
         $this->model = $model;
     }
+
+    /**
+     * Create a model.
+     *
+     * @param array $payload
+     * @return Model
+     */
+    public function create(array $payload): ?Model
+    {
+        $model = $this->model->create($payload);
+
+        if (array_key_exists('role', $payload)) {
+            $model->assignRole($payload['role']);
+        } else {
+            $model->assignRole('user');
+        }
+
+        return $model->fresh();
+    }
+    
+    /**
+     * Update existing model.
+     *
+     * @param int $modelId
+     * @param array $payload
+     * @return Model
+     */
+    public function update(int $modelId, array $payload): bool
+    {
+        $model = $this->findById($modelId);
+
+        if (array_key_exists('role', $payload)) {
+            $model->syncRoles($payload['role']);
+        }
+
+        return $model->update($payload);
+    }
+    
+    /**
+     * Delete model by id.
+     *
+     * @param int $modelId
+     * @return Model
+     */
+    public function deleteById(int $modelId): bool
+    {
+        $model = $this->findById($modelId);
+
+        return $model->delete();
+    }
 }

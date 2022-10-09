@@ -43,23 +43,6 @@ class EloquentRepository implements EloquentInterface
     }
 
     /**
-     * Get all models.
-     *
-     * @param array $wheres
-     * @return Collection
-     */
-    public function allExist(array $wheres = []): Collection
-    {
-        $model = $this->model;
-
-        if (!empty($wheres)) {
-            $model->where($wheres);
-        }
-
-        return $model->exists();
-    }
-
-    /**
      * Get all trashed models.
      *
      * @return Collection
@@ -89,9 +72,10 @@ class EloquentRepository implements EloquentInterface
      * @param array $wheres
      * @param array $columns
      * @param array $relations
+     * @param array $appends
      * @return Model
      */
-    public function findByCustomId(array $wheres = [], array $columns = ['*'], array $relations = []): ?Model
+    public function findByCustomId(array $wheres = [], array $columns = ['*'], array $relations = [], array $appends = []): ?Model
     {
         return $this->model->select($columns)->with($relations)->where($wheres)->firstOrFail();
     }

@@ -3,8 +3,8 @@
 namespace App\Repositories\Models;
 
 use App\Models\Task;
-use App\Repositories\EloquentRepository;
 use App\Contracts\Models\TaskInterface;
+use App\Repositories\EloquentRepository;
 
 class TaskRepository extends EloquentRepository implements TaskInterface
 {

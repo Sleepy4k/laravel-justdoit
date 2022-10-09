@@ -1,19 +1,26 @@
 <?php
 
-namespace App\View\Components\Landing;
+namespace App\View\Components\Body\Profile;
 
 use Illuminate\View\Component;
 
-class Layout extends Component
+class Info extends Component
 {
+    /**
+     * The template route.
+     *
+     * @var string
+     */
+    public $class;
+
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct()
+    public function __construct($class = '')
     {
-        //
+        $this->class = $class;
     }
 
     /**
@@ -23,6 +30,6 @@ class Layout extends Component
      */
     public function render()
     {
-        return view('components.landing.layout');
+        return view('components.body.profile.info');
     }
 }

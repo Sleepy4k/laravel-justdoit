@@ -1,18 +1,18 @@
 <?php
 
-namespace App\Http\Controllers\Fallback;
+namespace App\Http\Controllers\Api\Error;
 
 use App\Http\Controllers\Controller;
-use App\Services\Fallback\WebService;
+use App\Services\Api\Error\FallbackService;
 
-class WebController extends Controller
+class FallbackController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(WebService $service)
+    public function index(FallbackService $service)
     {
         return $service->index();
     }

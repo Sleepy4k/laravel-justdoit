@@ -5,14 +5,14 @@ namespace App\Http\Controllers\Api\Auth;
 use App\Http\Controllers\Controller;
 use App\Services\Api\Auth\RefreshService;
 
-class LogoutController extends Controller
+class RefreshController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function login(RefreshService $service)
+    public function index(RefreshService $service)
     {
         return $service->index();
     }

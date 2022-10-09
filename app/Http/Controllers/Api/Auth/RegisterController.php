@@ -3,17 +3,17 @@
 namespace App\Http\Controllers\Api\Auth;
 
 use App\Http\Controllers\Controller;
-use App\Services\Api\Auth\LoginService;
-use App\Http\Requests\Api\Auth\LoginRequest;
+use App\Services\Api\Auth\RegisterService;
+use App\Http\Requests\Api\Auth\RegisterRequest;
 
-class LoginController extends Controller
+class RegisterController extends Controller
 {
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(LoginRequest $request, LoginService $service)
+    public function index(RegisterRequest $request, RegisterService $service)
     {
         return $service->index($request->validated());
     }

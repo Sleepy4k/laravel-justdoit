@@ -12,7 +12,7 @@ class LogoutController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function login(LogoutService $service)
+    public function index(LogoutService $service)
     {
         return $service->index();
     }

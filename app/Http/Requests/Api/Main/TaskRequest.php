@@ -1,13 +1,13 @@
 <?php
 
-namespace App\Http\Requests\Api\Auth;
+namespace App\Http\Requests\Api\Main;
 
 use App\Traits\ApiRespons;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Http\Exceptions\HttpResponseException;
 
-class LoginRequest extends FormRequest
+class TaskRequest extends FormRequest
 {
     use ApiRespons;
 
@@ -49,10 +49,36 @@ class LoginRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            'username' => ['required','max:255','string'],
-            'password' => ['required','min:8','max:255','string']
-        ];
+        $rules = [];
+
+        switch($this->method())
+        {
+            case 'POST':
+                $rules = [
+                    'task' => ['required','string','max:255'],
+                    'subject' => ['required','string'],
+                    'priority' => ['required','string','max:255'],
+                    'isDone' => ['required','string','max:255']
+                ];
+                break;
+            case 'PATCH':
+                $rules = [
+                    'id' => ['required','string','max:255'],
+                    'task' => ['required','string','max:255'],
+                    'subject' => ['required','string'],
+                    'priority' => ['required','string','max:255'],
+                    'isDone' => ['required','string','max:255']
+                ];
+                break;
+            case 'DELETE':
+                $rules = [
+                    'id' => ['required','string','max:255']
+                ];
+                break;
+            default: break;
+        }
+
+        return $rules;
     }
 
     /**

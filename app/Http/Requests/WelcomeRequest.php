@@ -1,16 +1,13 @@
 <?php
 
-namespace App\Http\Requests\Api\Auth;
+namespace App\Http\Requests;
 
-use App\Traits\ApiRespons;
+use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Contracts\Validation\Validator;
-use Illuminate\Http\Exceptions\HttpResponseException;
 
-class LoginRequest extends FormRequest
+class WelcomeRequest extends FormRequest
 {
-    use ApiRespons;
-
     /**
      * Indicates if the validator should stop on the first rule failure.
      *
@@ -19,27 +16,13 @@ class LoginRequest extends FormRequest
     protected $stopOnFirstFailure = false;
 
     /**
-     * The URI that users should be redirected to if validation fails.
-     *
-     * @var string
-     */
-    // protected $redirect = '';
-
-    /**
-     * The route that users should be redirected to if validation fails.
-     *
-     * @var string
-     */
-    // protected $redirectRoute = '';
-
-    /**
      * Determine if the user is authorized to make this request.
      *
      * @return bool
      */
     public function authorize()
     {
-        return true;
+        return auth()->check();
     }
 
     /**
@@ -49,12 +32,22 @@ class LoginRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            'username' => ['required','max:255','string'],
-            'password' => ['required','min:8','max:255','string']
-        ];
-    }
+        $rules = [];
 
+        switch($this->method())
+        {
+            case 'PATCH':
+                $rules = [
+                    'import_file' => ['required','file','mimes:xlsx,csv'],
+                    'livestock_id' => ['nullable','max:255','string']
+                ];
+                break;
+            default: break;
+        }
+
+        return $rules;
+    }
+     
     /**
      * Custom message for validation
      *
@@ -91,22 +84,14 @@ class LoginRequest extends FormRequest
         ]);
     }
 
+    
     /**
-     * Custom error message for validation
+     * Custom error response for validation.
      *
      * @return array
      */
     public function failedValidation(Validator $validator)
     {
-        throw new HttpResponseException(
-            $this->createResponse(500, 'Server Error',
-                [
-                    'error' => $validator->errors()
-                ],
-                [
-                    route('api.login')
-                ]
-            )
-        );
+        Toastr::error('Data gagal untuk dibuat', 'System');
     }
 }

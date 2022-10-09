@@ -1,37 +1,13 @@
 <?php
 
-namespace App\Http\Requests\Api\Auth;
+namespace App\Http\Requests\Page\System;
 
-use App\Traits\ApiRespons;
+use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Contracts\Validation\Validator;
-use Illuminate\Http\Exceptions\HttpResponseException;
 
-class LoginRequest extends FormRequest
+class TranslateRequest extends FormRequest
 {
-    use ApiRespons;
-
-    /**
-     * Indicates if the validator should stop on the first rule failure.
-     *
-     * @var bool
-     */
-    protected $stopOnFirstFailure = false;
-
-    /**
-     * The URI that users should be redirected to if validation fails.
-     *
-     * @var string
-     */
-    // protected $redirect = '';
-
-    /**
-     * The route that users should be redirected to if validation fails.
-     *
-     * @var string
-     */
-    // protected $redirectRoute = '';
-
     /**
      * Determine if the user is authorized to make this request.
      *
@@ -39,7 +15,7 @@ class LoginRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return auth()->check();
     }
 
     /**
@@ -49,12 +25,32 @@ class LoginRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            'username' => ['required','max:255','string'],
-            'password' => ['required','min:8','max:255','string']
-        ];
-    }
+        $rules = [];
 
+        switch($this->method())
+        {
+            case 'POST':
+                $rules = [
+                    'group' => ['required','max:255','string'],
+                    'key' => ['required','max:255','string'],
+                    'lang_id' => ['required','max:255','string'],
+                    'lang_en' => ['required','max:255','string']
+                ];
+                break;
+            case 'PUT':
+                $rules = [
+                    'group' => ['required','max:255','string'],
+                    'key' => ['required','max:255','string'],
+                    'lang_id' => ['required','max:255','string'],
+                    'lang_en' => ['required','max:255','string']
+                ];
+                break;
+            default: break;
+        }
+
+        return $rules;
+    }
+     
     /**
      * Custom message for validation
      *
@@ -98,15 +94,6 @@ class LoginRequest extends FormRequest
      */
     public function failedValidation(Validator $validator)
     {
-        throw new HttpResponseException(
-            $this->createResponse(500, 'Server Error',
-                [
-                    'error' => $validator->errors()
-                ],
-                [
-                    route('api.login')
-                ]
-            )
-        );
+        Toastr::error('Data gagal untuk dibuat', 'Translate');
     }
 }

@@ -1,16 +1,13 @@
 <?php
 
-namespace App\Http\Requests\Api\Auth;
+namespace App\Http\Requests\Page\System;
 
-use App\Traits\ApiRespons;
+use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Contracts\Validation\Validator;
-use Illuminate\Http\Exceptions\HttpResponseException;
 
-class LoginRequest extends FormRequest
+class ApplicationRequest extends FormRequest
 {
-    use ApiRespons;
-
     /**
      * Indicates if the validator should stop on the first rule failure.
      *
@@ -39,7 +36,7 @@ class LoginRequest extends FormRequest
      */
     public function authorize()
     {
-        return true;
+        return auth()->check();
     }
 
     /**
@@ -50,11 +47,18 @@ class LoginRequest extends FormRequest
     public function rules()
     {
         return [
-            'username' => ['required','max:255','string'],
-            'password' => ['required','min:8','max:255','string']
+            'application_name' => ['required','max:255','string'],
+            'application_icon' => ['nullable','image','mimes:jpg,jpeg,png,svg','max:4092','dimensions:min_width=100,min_height=100'],
+            'old_app_icon' => ['nullable','string','max:255'],
+            'application_author' => ['required','max:255','string'],
+            'application_keywords' => ['required','max:255','string'],
+            'application_description' => ['required','string'],
+            'sidebar_name' => ['required','max:255','string'],
+            'sidebar_icon' => ['nullable','image','mimes:jpg,jpeg,png,svg','max:4092','dimensions:min_width=100,min_height=100'],
+            'old_side_icon' => ['nullable','string','max:255']
         ];
     }
-
+    
     /**
      * Custom message for validation
      *
@@ -98,15 +102,10 @@ class LoginRequest extends FormRequest
      */
     public function failedValidation(Validator $validator)
     {
-        throw new HttpResponseException(
-            $this->createResponse(500, 'Server Error',
-                [
-                    'error' => $validator->errors()
-                ],
-                [
-                    route('api.login')
-                ]
-            )
-        );
+        foreach ($validator->errors()->getMessages() as $data) {
+            foreach ($data as $error) {
+                Toastr::error($error, 'Application');
+            }
+        }
     }
 }

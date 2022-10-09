@@ -1,16 +1,13 @@
 <?php
 
-namespace App\Http\Requests\Api\Auth;
+namespace App\Http\Requests\Page\Setting;
 
-use App\Traits\ApiRespons;
+use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Contracts\Validation\Validator;
-use Illuminate\Http\Exceptions\HttpResponseException;
 
-class LoginRequest extends FormRequest
+class ProfileRequest extends FormRequest
 {
-    use ApiRespons;
-
     /**
      * Indicates if the validator should stop on the first rule failure.
      *
@@ -19,27 +16,13 @@ class LoginRequest extends FormRequest
     protected $stopOnFirstFailure = false;
 
     /**
-     * The URI that users should be redirected to if validation fails.
-     *
-     * @var string
-     */
-    // protected $redirect = '';
-
-    /**
-     * The route that users should be redirected to if validation fails.
-     *
-     * @var string
-     */
-    // protected $redirectRoute = '';
-
-    /**
      * Determine if the user is authorized to make this request.
      *
      * @return bool
      */
     public function authorize()
     {
-        return true;
+        return auth()->check();
     }
 
     /**
@@ -49,12 +32,26 @@ class LoginRequest extends FormRequest
      */
     public function rules()
     {
-        return [
-            'username' => ['required','max:255','string'],
-            'password' => ['required','min:8','max:255','string']
-        ];
-    }
+        $rules = [];
 
+        if ($this->has('form_pw')) {
+            $rules = [
+                'old_password' => ['required','min:8','max:255','string'],
+                'password' => ['required','min:8','max:255','string'],
+                'confirm_password' => ['required','min:8','max:255','same:password','string']
+            ];
+        } elseif ($this->has('form_user')) {
+            $rules = [
+                'surename' => ['required','max:255','string'],
+                'language' => ['required','max:255','string'],
+                'logo' => ['nullable','image','mimes:jpg,jpeg,png,svg','max:4092','dimensions:min_width=100,min_height=100'],
+                'old_logo' => ['nullable','string']
+            ];
+        }
+
+        return $rules;
+    }
+     
     /**
      * Custom message for validation
      *
@@ -98,15 +95,6 @@ class LoginRequest extends FormRequest
      */
     public function failedValidation(Validator $validator)
     {
-        throw new HttpResponseException(
-            $this->createResponse(500, 'Server Error',
-                [
-                    'error' => $validator->errors()
-                ],
-                [
-                    route('api.login')
-                ]
-            )
-        );
+        Toastr::error('Data gagal untuk dibuat', 'Profile');
     }
 }

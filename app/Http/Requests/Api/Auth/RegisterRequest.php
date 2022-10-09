@@ -7,7 +7,7 @@ use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Contracts\Validation\Validator;
 use Illuminate\Http\Exceptions\HttpResponseException;
 
-class LoginRequest extends FormRequest
+class RegisterRequest extends FormRequest
 {
     use ApiRespons;
 
@@ -50,8 +50,10 @@ class LoginRequest extends FormRequest
     public function rules()
     {
         return [
-            'username' => ['required','max:255','string'],
-            'password' => ['required','min:8','max:255','string']
+            'username' => ['required','string','max:255','unique:users,username'],
+            'surename' => ['required','string','max:255'],
+            'password' => ['required','string','min:8','max:255','same:confirm_password'],
+            'confirm_password' => ['required','string','min:8','max:255']
         ];
     }
 
@@ -104,7 +106,7 @@ class LoginRequest extends FormRequest
                     'error' => $validator->errors()
                 ],
                 [
-                    route('api.login')
+                    route('api.register')
                 ]
             )
         );

@@ -1,16 +1,13 @@
 <?php
 
-namespace App\Http\Requests\Api\Auth;
+namespace App\Http\Requests\Page\Auth;
 
-use App\Traits\ApiRespons;
+use Brian2694\Toastr\Facades\Toastr;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Contracts\Validation\Validator;
-use Illuminate\Http\Exceptions\HttpResponseException;
 
 class LoginRequest extends FormRequest
 {
-    use ApiRespons;
-
     /**
      * Indicates if the validator should stop on the first rule failure.
      *
@@ -98,15 +95,6 @@ class LoginRequest extends FormRequest
      */
     public function failedValidation(Validator $validator)
     {
-        throw new HttpResponseException(
-            $this->createResponse(500, 'Server Error',
-                [
-                    'error' => $validator->errors()
-                ],
-                [
-                    route('api.login')
-                ]
-            )
-        );
+        Toastr::error('Login gagal', 'Auth');
     }
 }

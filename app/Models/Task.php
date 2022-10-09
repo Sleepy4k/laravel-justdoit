@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use Spatie\Activitylog\LogOptions;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Activitylog\Traits\LogsActivity;
 
@@ -87,7 +86,9 @@ class Task extends Model
      *
      * @var array<int, string>
      */
-    protected $hidden = [];
+    protected $hidden = [
+        'deleted_at'
+    ];
     
     /**
      * The attributes that aren't mass assignable to determine if this is a date.
@@ -95,7 +96,7 @@ class Task extends Model
      * @var array
      */
     protected $dates = [];
-    
+
     /**
      * The attributes that should be cast.
      *
@@ -104,17 +105,64 @@ class Task extends Model
     protected $casts = [];
 
     /**
-     * The spatie log that setting log option.
+     * The spatie log that has actually changed after the update.
      *
      * @var bool
      */
-    public function getActivitylogOptions(): LogOptions
+    protected static $logOnlyDirty = true;
+
+    /**
+     * The spatie log that setting to false prevents the package from storing empty logs.
+     *
+     * @var bool
+     */
+    protected static $submitEmptyLogs = false;
+
+    /**
+     * The spatie log that make the model use another name than the default.
+     *
+     * @var string
+     */
+    protected static $logName = 'Tasks';
+
+    /**
+     * The spatie log that override default created, updated, deleted description of the activity.
+     *
+     * @var string
+     */
+    public function getDescriptionForEvent(string $eventName): string
     {
-        return LogOptions::defaults()
-                            ->logOnly(['tiket_number', 'time', 'amount', 'status', 'price', 'package_id', 'user_id'])
-                            ->logOnlyDirty()
-                            ->useLogName('Task')
-                            ->setDescriptionForEvent(fn(string $eventName) => "model Task successfully {$eventName}")
-                            ->dontSubmitEmptyLogs();
+        return "model Tasks successfully {$eventName}";
     }
+
+    /**
+     * The spatie log that log listed event.
+     *
+     * @var array
+     */
+    protected static $recordEvents = [
+        'created',
+        'updated',
+        'deleted'
+    ];
+    
+    /**
+     * The spatie log that need to be logged can be defined either by their name.
+     *
+     * @var array
+     */
+    protected static $logAttributes = [
+        'company',
+        'register_number',
+        'livestock_name',
+        'gender',
+        'racial',
+        'birthday',
+        'weight',
+        'lenght',
+        'height',
+        'register_number_father',
+        'register_number_mother',
+        'status'
+    ];
 }

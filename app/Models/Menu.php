@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use Spatie\Activitylog\LogOptions;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Activitylog\Traits\LogsActivity;
 
@@ -104,20 +103,60 @@ class Menu extends Model
     protected $casts = [];
 
     /**
-     * The spatie log that setting log option.
+     * The spatie log that has actually changed after the update.
      *
      * @var bool
      */
-    public function getActivitylogOptions(): LogOptions
+    protected static $logOnlyDirty = true;
+
+    /**
+     * The spatie log that setting to false prevents the package from storing empty logs.
+     *
+     * @var bool
+     */
+    protected static $submitEmptyLogs = false;
+
+    /**
+     * The spatie log that make the model use another name than the default.
+     *
+     * @var string
+     */
+    protected static $logName = 'Menus';
+
+    /**
+     * The spatie log that override default created, updated, deleted description of the activity.
+     *
+     * @var string
+     */
+    public function getDescriptionForEvent(string $eventName): string
     {
-        return LogOptions::defaults()
-                            ->logOnly(['name', 'label', 'icon', 'category', 'permission'])
-                            ->logOnlyDirty()
-                            ->useLogName('Menus')
-                            ->setDescriptionForEvent(fn(string $eventName) => "model Menus successfully {$eventName}")
-                            ->dontSubmitEmptyLogs();
+        return "model Menus successfully {$eventName}";
     }
 
+    /**
+     * The spatie log that log listed event.
+     *
+     * @var array
+     */
+    protected static $recordEvents = [
+        'created',
+        'updated',
+        'deleted'
+    ];
+    
+    /**
+     * The spatie log that need to be logged can be defined either by their name.
+     *
+     * @var array
+     */
+    protected static $logAttributes = [
+        'name',
+        'label',
+        'icon',
+        'category',
+        'permission'
+    ];
+    
     /**
      * The categories relationship.
      *

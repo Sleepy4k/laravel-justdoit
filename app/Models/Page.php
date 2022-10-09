@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use Spatie\Activitylog\LogOptions;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Activitylog\Traits\LogsActivity;
 
@@ -104,19 +103,59 @@ class Page extends Model
     protected $casts = [];
 
     /**
-     * The spatie log that setting log option.
+     * The spatie log that has actually changed after the update.
      *
      * @var bool
      */
-    public function getActivitylogOptions(): LogOptions
+    protected static $logOnlyDirty = true;
+
+    /**
+     * The spatie log that setting to false prevents the package from storing empty logs.
+     *
+     * @var bool
+     */
+    protected static $submitEmptyLogs = false;
+
+    /**
+     * The spatie log that make the model use another name than the default.
+     *
+     * @var string
+     */
+    protected static $logName = 'Pages';
+
+    /**
+     * The spatie log that override default created, updated, deleted description of the activity.
+     *
+     * @var string
+     */
+    public function getDescriptionForEvent(string $eventName): string
     {
-        return LogOptions::defaults()
-                            ->logOnly(['name', 'label', 'menu_id', 'page_url', 'permission'])
-                            ->logOnlyDirty()
-                            ->useLogName('Pages')
-                            ->setDescriptionForEvent(fn(string $eventName) => "model Pages successfully {$eventName}")
-                            ->dontSubmitEmptyLogs();
+        return "model Pages successfully {$eventName}";
     }
+
+    /**
+     * The spatie log that log listed event.
+     *
+     * @var array
+     */
+    protected static $recordEvents = [
+        'created',
+        'updated',
+        'deleted'
+    ];
+    
+    /**
+     * The spatie log that need to be logged can be defined either by their name.
+     *
+     * @var array
+     */
+    protected static $logAttributes = [
+        'name',
+        'label',
+        'menu_id',
+        'page_url',
+        'permission'
+    ];
 
     /**
      * The menus relationship.

@@ -2,17 +2,14 @@
 
 namespace App\Models;
 
-use Laravel\Sanctum\HasApiTokens;
-use Spatie\Activitylog\LogOptions;
-use Illuminate\Notifications\Notifiable;
+use Spatie\Permission\Traits\HasRoles;
+use Tymon\JWTAuth\Contracts\JWTSubject;
 use Spatie\Activitylog\Traits\LogsActivity;
-use PHPOpenSourceSaver\JWTAuth\Contracts\JWTSubject;
-use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 
 class User extends Authenticatable implements JWTSubject
 {
-    use HasApiTokens, HasFactory, Notifiable, LogsActivity;
+    use LogsActivity, HasRoles;
 
     /**
      * The table associated with created data.
@@ -40,7 +37,7 @@ class User extends Authenticatable implements JWTSubject
      *
      * @var string
      */
-    protected $table = 'facilities';
+    protected $table = 'users';
 
     /**
      * The primary key associated with the table.
@@ -73,11 +70,13 @@ class User extends Authenticatable implements JWTSubject
     /**
      * The attributes that are mass assignable.
      *
-     * @var array<int, string>
+     * @var array
      */
     protected $fillable = [
-        'name',
-        'email',
+        'username',
+        'surename',
+        'language',
+        'logo',
         'password'
     ];
 
@@ -86,7 +85,9 @@ class User extends Authenticatable implements JWTSubject
      *
      * @var array
      */
-    protected $guarded = [];
+    protected $guarded = [
+        'id'
+    ];
 
     /**
      * The attributes that should be hidden for serialization.
@@ -97,13 +98,15 @@ class User extends Authenticatable implements JWTSubject
         'password',
         'remember_token',
     ];
-
+    
     /**
      * The attributes that aren't mass assignable to determine if this is a date.
      *
      * @var array
      */
-    protected $dates = [];
+    protected $dates = [
+        'deleted_at'
+    ];
     
     /**
      * The attributes that should be cast.
@@ -113,36 +116,76 @@ class User extends Authenticatable implements JWTSubject
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
-    
+
     /**
-     * The spatie log that setting log option.
+     * The spatie log that has actually changed after the update.
      *
      * @var bool
      */
-    public function getActivitylogOptions(): LogOptions
+    protected static $logOnlyDirty = true;
+
+    /**
+     * The spatie log that setting to false prevents the package from storing empty logs.
+     *
+     * @var bool
+     */
+    protected static $submitEmptyLogs = false;
+
+    /**
+     * The spatie log that make the model use another name than the default.
+     *
+     * @var string
+     */
+    protected static $logName = 'Users';
+
+    /**
+     * The spatie log that override default created, updated, deleted description of the activity.
+     *
+     * @var string
+     */
+    public function getDescriptionForEvent(string $eventName): string
     {
-        return LogOptions::defaults()
-                            ->logOnly(['name', 'email', 'password'])
-                            ->logOnlyDirty()
-                            ->useLogName('Pages')
-                            ->setDescriptionForEvent(fn(string $eventName) => "model Pages successfully {$eventName}")
-                            ->dontSubmitEmptyLogs();
+        return "model Users successfully {$eventName}";
     }
 
     /**
-     * Get the identifier that will be stored in the subject claim of the JWT.
+     * The spatie log that log listed event.
      *
-     * @return mixed
+     * @var array
+     */
+    protected static $recordEvents = [
+        'created',
+        'updated',
+        'deleted'
+    ];
+    
+    /**
+     * The spatie log that need to be logged can be defined either by their name.
+     *
+     * @var array
+     */
+    protected static $logAttributes = [
+        'username',
+        'logo',
+        'email',
+        'whatsapp_number',
+        'company'
+    ];
+
+    /**
+     * The jwt get identifier.
+     *
+     * @var array
      */
     public function getJWTIdentifier()
     {
         return $this->getKey();
     }
-
+    
     /**
-     * Return a key value array, containing any custom claims to be added to the JWT.
+     * The jwt custom claims.
      *
-     * @return array
+     * @var array
      */
     public function getJWTCustomClaims()
     {

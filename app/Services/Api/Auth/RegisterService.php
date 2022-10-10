@@ -16,20 +16,13 @@ class RegisterService
     private $userInterface;
 
     /**
-     * @var companyInterface
-     */
-    private $companyInterface;
-
-    /**
      * Account service constructor.
      * 
      * @param App\Contracts\Models\UserInterface $userInterface
-     * @param App\Contracts\Models\CompanyInterface $companyInterface
      */
-    public function __construct(Models\UserInterface $userInterface, Models\CompanyInterface $companyInterface)
+    public function __construct(Models\UserInterface $userInterface)
     {
         $this->userInterface = $userInterface;
-        $this->companyInterface = $companyInterface;
     }
 
     /**
@@ -40,33 +33,16 @@ class RegisterService
     public function index($request)
     {
         try {
-            $company = $this->companyInterface->create([
-                'name' => $request['company'],
-                'email' => $request['email']
-            ]);
-        } catch (\Throwable $th) {
-            return $this->createResponse(500, 'Server Error',
-                [
-                    'error' => 'Data company is duplicated'
-                ],
-                [
-                    route('api.register')
-                ]
-            );
-        }
-
-        try {
-            $this->userInterface->create([
+            $user = $this->userInterface->create([
                 'username' => $request['username'],
-                'email' => $request['email'],
-                'company' => $company->id,
-                'whatsapp_number' => $request['whatsapp_number'],
-                'password' => $request['password'],
+                'surename' => $request['surename'],
+                'language' => 'en',
+                'password' => $request['password']
             ]);
         } catch (\Throwable $th) {
             return $this->createResponse(500, 'Server Error',
                 [
-                    'error' => 'Data user is duplicated'
+                    'error' => $th->getMessage()
                 ],
                 [
                     route('api.register')
@@ -76,15 +52,14 @@ class RegisterService
 
         try {
             activity("register")->withProperties([
-                "username" => $request['username'],
-                "email" => $request['email'],
-                "whatsapp" => $request['whatsapp_number'],
-                "company name" => $request['company']
+                'username' => $request['username'],
+                'surename' => $request['surename'],
+                'language' => 'en'
             ])->log('Akun '.$request['username'].' berhasil di daftarkan');
         } catch (\Throwable $th) {
             return $this->createResponse(500, 'Server Error',
                 [
-                    'error' => 'Data user is duplicated'
+                    'error' => $th->getMessage()
                 ],
                 [
                     route('api.register')
@@ -94,7 +69,7 @@ class RegisterService
 
         return $this->createResponse(200, 'success',
             [
-                'data' => new RegisterResource($request)
+                'data' => new RegisterResource($user)
             ],
             [
                 route('api.register')

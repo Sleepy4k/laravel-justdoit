@@ -45,13 +45,13 @@ class RegisterService
             'username' => $request['username'],
             'surename' => $request['surename'],
             'language' => 'en',
-            'password' => $request['password'],
+            'password' => $request['password']
         ]);
 
         activity("register")->withProperties([
             'username' => $request['username'],
             'surename' => $request['surename'],
-            'language' => 'en',
+            'language' => 'en'
         ])->log('Akun '.$request['username'].' berhasil di daftarkan');
 
         return toastr()->success($request['username'].' berhasil di daftarkan', 'Auth');

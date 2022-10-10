@@ -4,12 +4,11 @@ namespace App\Services\Api\Main;
 
 use App\Contracts\Models;
 use App\Traits\ApiRespons;
-use App\Traits\RandomNumber;
 use App\Http\Resources\Main\TaskResource;
 
 class TaskService
 {
-    use RandomNumber, ApiRespons;
+    use ApiRespons;
 
     /**
      * @var taskInterface
